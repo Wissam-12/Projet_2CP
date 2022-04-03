@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/cons.dart';
 
 class accueil extends StatefulWidget {
   accueil({Key? key}) : super(key: key);
@@ -22,7 +23,9 @@ class _accueilState extends State<accueil> {
       CustomScrollView(
         slivers: [
           SliverAppBar(
-              backgroundColor: Color(0xFFEBFFDB),
+              backgroundColor: Colors.transparent,
+              elevation: 1,
+              //Color(0xFFEBFFDB),
               automaticallyImplyLeading: false,
               toolbarHeight: 90,
               actions: [
@@ -38,7 +41,12 @@ class _accueilState extends State<accueil> {
                               color: Colors.white,
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return cons();
+                              }));
+                            }),
                         backgroundColor: Color(0xffFFA450),
                       ),
                     ),
@@ -88,20 +96,33 @@ class _accueilState extends State<accueil> {
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
-                    Container(
-                        margin: EdgeInsets.only(left: 20, right: 23),
+                    MaterialButton(
+                      onPressed: () {},
+                      height: 70,
+                      shape: CircleBorder(),
+                      child: CircleAvatar(
+                        radius: 28,
+                        backgroundColor: Color(0xffFFA450),
                         child: CircleAvatar(
-                          radius: 28,
-                          backgroundColor: Color(0xffFFA450),
-                          child: CircleAvatar(
-                            radius: 21,
-                            backgroundColor: Color(0xFFFFF27D),
-                            backgroundImage: AssetImage("images/bag.png"),
-                          ),
-                        )),
+                          radius: 21,
+                          backgroundColor: Color(0xFFFFF27D),
+                          backgroundImage: AssetImage("images/bag.png"),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ]),
+          // margin: EdgeInsets.only(left: 20, right: 23),
+          //           child: CircleAvatar(
+          //             radius: 28,
+          //             backgroundColor: Color(0xffFFA450),
+          //             child: CircleAvatar(
+          //               radius: 21,
+          //               backgroundColor: Color(0xFFFFF27D),
+          //               backgroundImage: AssetImage("images/bag.png"),
+          //             ),
+          //           )
         ],
       ),
       Column(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -111,12 +132,7 @@ class _accueilState extends State<accueil> {
                 height: 74,
                 width: 177,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return accueil();
-                    }));
-                  },
+                  onPressed: () {},
                   child: Text("jouer"),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
