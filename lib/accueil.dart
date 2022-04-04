@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/cons.dart';
+import 'package:projet/puzzle.dart';
 
 class accueil extends StatefulWidget {
   accueil({Key? key}) : super(key: key);
@@ -41,12 +41,7 @@ class _accueilState extends State<accueil> {
                               color: Colors.white,
                               size: 32,
                             ),
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return cons();
-                              }));
-                            }),
+                            onPressed: () {}),
                         backgroundColor: Color(0xffFFA450),
                       ),
                     ),
@@ -96,43 +91,85 @@ class _accueilState extends State<accueil> {
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
-                    MaterialButton(
-                      onPressed: () {},
-                      height: 70,
-                      shape: CircleBorder(),
-                      child: CircleAvatar(
-                        radius: 28,
-                        backgroundColor: Color(0xffFFA450),
+                    Container(
+                      margin: EdgeInsets.only(right: 8),
+                      child: MaterialButton(
+                        onPressed: () {},
+                        height: 70,
+                        shape: CircleBorder(),
                         child: CircleAvatar(
-                          radius: 21,
-                          backgroundColor: Color(0xFFFFF27D),
-                          backgroundImage: AssetImage("images/bag.png"),
+                          radius: 28,
+                          backgroundColor: Color(0xffFFA450),
+                          child: CircleAvatar(
+                            radius: 21,
+                            backgroundColor: Color(0xFFFFF27D),
+                            backgroundImage: AssetImage("images/bag.png"),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
               ]),
-          // margin: EdgeInsets.only(left: 20, right: 23),
-          //           child: CircleAvatar(
-          //             radius: 28,
-          //             backgroundColor: Color(0xffFFA450),
-          //             child: CircleAvatar(
-          //               radius: 21,
-          //               backgroundColor: Color(0xFFFFF27D),
-          //               backgroundImage: AssetImage("images/bag.png"),
-          //             ),
-          //           )
         ],
       ),
       Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Container(
+          margin: EdgeInsets.only(top: 100, bottom: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Salut',
+                style: TextStyle(
+                    fontFamily: 'Rubik-ExtraBold',
+                    fontSize: 42,
+                    color: Color(0xff3DB86E),
+                    fontWeight: FontWeight.bold),
+              ),
+              Text('     '),
+              Text(
+                'Wissam !',
+                style: TextStyle(
+                    fontFamily: 'Rubik-ExtraBold',
+                    fontSize: 42,
+                    color: Color(0xffFFA450),
+                    fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(bottom: 50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Heureux de te revoir !',
+                style: TextStyle(
+                    fontFamily: 'Rubik',
+                    fontSize: 36,
+                    color: Color(0xff3DB86E),
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(bottom: 30),
           child: Center(
             child: SizedBox(
                 height: 74,
                 width: 177,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return puzzle();
+                    }));
+                  },
                   child: Text("jouer"),
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

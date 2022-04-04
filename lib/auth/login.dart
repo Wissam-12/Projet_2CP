@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
               //mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  height: 500,
+                  height: 450,
                   child: Center(
                       child: Container(
                     height: 280,
