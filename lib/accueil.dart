@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/Collection.dart';
 import 'package:projet/puzzle.dart';
 
 class accueil extends StatefulWidget {
@@ -94,7 +95,12 @@ class _accueilState extends State<accueil> {
                     Container(
                       margin: EdgeInsets.only(right: 8),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return Collection();
+                          }));
+                        },
                         height: 70,
                         shape: CircleBorder(),
                         child: CircleAvatar(

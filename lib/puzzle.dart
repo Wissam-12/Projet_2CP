@@ -116,11 +116,6 @@ class _puzzleState extends State<puzzle> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-                // decoration: BoxDecoration(boxShadow: [
-                //   BoxShadow(
-                //       color: Color.fromARGB(255, 108, 102, 102),
-                //       spreadRadius: 2)
-                // ]),
                 margin: EdgeInsets.only(bottom: 30, top: 30),
                 child: Text("Chasse au trésor",
                     style: TextStyle(
