@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projet/Collection.dart';
-import 'package:projet/puzzle.dart';
+import 'Collection.dart';
+import 'puzzle.dart';
 
 class accueil extends StatefulWidget {
   accueil({Key? key}) : super(key: key);

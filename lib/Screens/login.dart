@@ -1,4 +1,4 @@
-import 'package:projet/accueil.dart';
+import 'accueil.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -33,26 +33,37 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.topCenter,
                     child: Center(
                       child: SizedBox(
-                          height: 74,
-                          width: 250,
-                          child: ElevatedButton(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              const BoxShadow(
+                                color: Color(0xFFFF6F50),
+                              ),
+                              const BoxShadow(
+                                color: Color(0XFFFFA450),
+                                blurRadius: 10.0,
+                                offset: Offset(4, -4),
+                              ),
+                            ],
+                          ),
+                          child: TextButton(
                             onPressed: () {
                               Navigator.of(context)
                                   .push(MaterialPageRoute(builder: (context) {
                                 return accueil();
                               }));
                             },
-                            child: Text("C'est parti"),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
-                              primary: Color(0XFFFFA450),
-                              textStyle: TextStyle(
-                                  fontFamily: 'Rubik-ExtraBold',
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          )),
+                            child: Text(
+                              "C'est parti",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                              ),
+                              ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
