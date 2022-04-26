@@ -542,7 +542,7 @@ class _ConseilsEPState extends State<ConseilsEP> {
         // ELEMENT OF "COLUMN"
         // ROW OF COLUMN => THE DISHES
         Container(
-          height: 500, //checked
+          height: 475, //checked
           child: ListView(
             scrollDirection: Axis.vertical,
             children: <Widget>[

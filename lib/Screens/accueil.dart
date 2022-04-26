@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Collection.dart';
 import 'puzzle.dart';
+import 'espaceEP.dart';
 
 class accueil extends StatefulWidget {
   accueil({Key? key}) : super(key: key);
@@ -42,7 +43,13 @@ class _accueilState extends State<accueil> {
                               color: Colors.white,
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return ConseilsEP();
+                              }));
+                            },
+                          ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                     ),

@@ -121,677 +121,555 @@ class _CollectionState extends State<Collection> {
 
       body: Container(
         margin: EdgeInsets.only(top: 30),
-        child: Stack(children: [
-          Container(
-            margin: EdgeInsets.only(
-              right: 30,
-              left: 30,
-            ),
-            child: GridView(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  crossAxisSpacing: 0,
-                  mainAxisSpacing: 0,
-                  childAspectRatio: (2.9)),
-              children: [
-                Container(
-                  alignment: Alignment.center,
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 34),
-                    child: Text(
-                      "Collection",
-                      style: TextStyle(
-                          fontFamily: 'Rubik-ExtraBold',
-                          fontSize: 42,
-                          color: Color(0xff3DB86E)),
-                    ),
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(
+                  right: 30,
+                  left: 30,
                 ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height: 110,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.center,
+                            child: Container(
+                              margin: EdgeInsets.only(bottom: 34),
+                              child: Text(
+                                "Collection",
+                                style: TextStyle(
+                                    fontFamily: 'Rubik-ExtraBold',
+                                    fontSize: 42,
+                                    color: Color(0xff3DB86E)
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 17,
-                      crossAxisSpacing: 10),
-                  physics: NeverScrollableScrollPhysics(),
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Container(
-                          width: 88,
-                          height: 88,
-                          child: Image.asset(
-                            "images/item.png",
-                          ),
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: Color(0xff4AE287),
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                    ),
-                  ],
-                ),
-                Center(
-                  child: Container(
-                    child: Image.asset("images/imm.png"),
-                  ),
-                )
-              ],
-            ),
-          ),
 
-          // GridView(
-          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisCount: 1,
-          //   ),
-          //   children: [
-          //     Container(
-          //       child: Image.asset(
-          //         "images/imm.png",
-          //       ),
-          //       decoration: BoxDecoration(
-          //         color: Color(0xff4AE287),
-          //         borderRadius: BorderRadius.circular(25),
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            alignment: Alignment.bottomLeft,
-            //color: Colors.red,
+                      SizedBox(height: 20,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      SizedBox(height: 17,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                          SizedBox(width: 10,),
+                          Container(
+                            child: Center(
+                              child: Container(
+                                width: 88,
+                                height: 88,
+                                child: Image.asset(
+                                  "images/item.png",
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                width: 8,
+                                color: Color(0xff4AE287),
+                              ),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              
+              Center(
+                child: Container(
+                  child: Image.asset("images/imm.png"),
+                ),
+              ),
+            ],
           ),
-        ]),
+        ),
       ),
-
-      // GridView.count(
-      //   crossAxisCount: 3,
-      //   children: List.generate(21, (index) {
-      //     return Center(
-      //       child: Container(
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(30), color: Colors.green,
-      //           border: Border.all(color: Color(0xffEBFFDB), )
-
-      //         ),
-      //         margin: EdgeInsets.only(left: 10, right: 15, top: 5, bottom: 15),
-      //         padding: EdgeInsets.all(20),
-      //       ),
-
-      //     );
-      //   },),
-      //   ),
     );
   }
 }
