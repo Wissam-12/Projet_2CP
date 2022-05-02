@@ -1,16 +1,32 @@
 import 'package:flutter/material.dart';
-import 'Collection.dart';
-import 'puzzle.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../back/database.dart';
+import '../back/quizz.dart';
+import 'profil.dart';
+import 'qcu.dart';
 import 'espaceEP.dart';
 
-class accueil extends StatefulWidget {
-  accueil({Key? key}) : super(key: key);
+class Accueil extends StatefulWidget {
+  Accueil({Key? key}) : super(key: key);
 
   @override
-  State<accueil> createState() => _accueilState();
+  State<Accueil> createState() => _AccueilState();
 }
 
-class _accueilState extends State<accueil> {
+class _AccueilState extends State<Accueil> {
+  final user = FirebaseAuth.instance.currentUser!;
+  List<Quizz> quizzes = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getQuizzes().then((quizzes) => {
+          this.setState(() {
+            this.quizzes = quizzes;
+          })
+        });
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +121,7 @@ class _accueilState extends State<accueil> {
                         onPressed: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
-                            return Collection();
+                            return Profil();
                           }));
                         },
                         height: 70,
@@ -143,7 +159,7 @@ class _accueilState extends State<accueil> {
               ),
               Text('     '),
               Text(
-                'Wissam !',
+                ((user.displayName!).split(' '))[0],
                 style: TextStyle(
                     fontFamily: 'Rubik-ExtraBold',
                     fontSize: 42,
@@ -180,7 +196,7 @@ class _accueilState extends State<accueil> {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return puzzle();
+                      return Qcu(quizzes[0], user);
                     }));
                   },
                   child: Text("jouer"),

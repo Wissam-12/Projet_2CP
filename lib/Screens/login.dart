@@ -1,5 +1,7 @@
-import 'accueil.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart'; 
+import 'home.dart';
+import '../google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,24 +11,67 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final scaffoldkey = GlobalKey<ScaffoldState>();
+  GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+      key: scaffoldkey,
+      body: Container(
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
           Column(
               //mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                SizedBox(
+                    height: 60,
+                ),
                 Container(
-                  height: 450,
+                  height: 280,
                   child: Center(
                       child: Container(
                     height: 280,
                     width: 280,
                     child: Image.asset("images/LOGO.png"),
                   )),
+                ),
+                SizedBox(
+                    height: 20,
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10,),
+                  child: new TextFormField(
+                      keyboardType: TextInputType.text,
+                      style: TextStyle(
+                          color: Color(0XFFFFA450),
+                          fontFamily: 'DMsans',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                      ),
+                      decoration: new InputDecoration(
+                          labelText: "Entrez votre nom",
+                          labelStyle: TextStyle(
+                              fontFamily: 'DMSans',
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0XFFFFA450),
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0XFFFFA450),
+                              ),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xFFFF6F50),
+                              ),
+                          ),
+                      ),
+                  ),
+                ),
+                SizedBox(
+                    height: 20,
                 ),
                 Center(
                   child: Container(
@@ -49,10 +94,8 @@ class _LoginState extends State<Login> {
                           ),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return accueil();
-                              }));
+                              final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                              provider.googleLogin();
                             },
                             child: Text(
                               "C'est parti",
