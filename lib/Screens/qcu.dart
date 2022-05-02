@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
 import '../back/quizz.dart';
+import 'dart:io';
 
 class Qcu extends StatefulWidget {
   final Quizz quizz;
@@ -16,6 +17,7 @@ class Qcu extends StatefulWidget {
 
 class _QcuState extends State<Qcu> {
   List<Color> coleur = [Color(0xFF3DB86E), Color(0xFF3DB86E), Color(0xFF3DB86E), Color(0xFF3DB86E)];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,6 +134,7 @@ class _QcuState extends State<Qcu> {
               ),),
               SizedBox(height: 40,),
               Container(
+                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10,),
                 height: 105, width: 355,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(244, 237,171, 1),
@@ -174,24 +177,43 @@ class _QcuState extends State<Qcu> {
           SizedBox(
             height:58.6 ,
             width:296,
-            child:ElevatedButton(
-              onPressed: () {
-                if (index == this.widget.quizz.rightAnswer){
-                  print("Gagner");
-                }
-                else{
-                  setState((){
-                    coleur[index] = Colors.red;
-                  });
-                  print("lost");
-                }
-              }, 
-              child: Text(this.widget.quizz.choices[index],
-              style:TextStyle(color: Colors.white,fontFamily: 'Rubik',fontSize: 20,fontWeight: FontWeight.w900)),
-              style: ElevatedButton.styleFrom(
-                primary: coleur[index],
-                shape: RoundedRectangleBorder(
+            child:AnimatedContainer(
+                duration: Duration(milliseconds: 800),
+                decoration: BoxDecoration(
+                  color: coleur[index],
                   borderRadius:BorderRadius.circular(24),
+                ),
+                child: ElevatedButton(
+                onPressed: () {
+                  if (index == this.widget.quizz.rightAnswer){
+                    print("Gagner");
+                  }
+                  else{
+                    setState((){
+                      coleur[index] = Colors.red;
+                    });
+                    Future.delayed(Duration(milliseconds: 800)).then((_) {
+                      setState(() {
+                        coleur[index] = Color(0xFF3DB86E);
+                      });
+                    });
+                  }
+                }, 
+                child: Center(
+                  child:Text(
+                    this.widget.quizz.choices[index],
+                    style:TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Rubik',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900
+                    ),
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0.0,
+                  shadowColor: Colors.transparent,
                 ),
               ),
             ),

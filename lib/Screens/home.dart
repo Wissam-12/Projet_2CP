@@ -16,14 +16,12 @@ class HomePage extends StatelessWidget {
                     child: CircularProgressIndicator()
                 );
             } else if (snapshot.hasData) {
-                print("hello");
                 return Accueil();
             } else if (snapshot.hasError) {
                 return Center(
                     child: Text('Oups, something went Wrong !')
                 );
             } else {
-                print("hii");
                 return Login();
             }
         },

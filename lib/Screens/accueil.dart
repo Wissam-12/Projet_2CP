@@ -196,7 +196,7 @@ class _AccueilState extends State<Accueil> {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Qcu(quizzes[0], user);
+                      return Qcu(quizzes[1], user);
                     }));
                   },
                   child: Text("jouer"),
