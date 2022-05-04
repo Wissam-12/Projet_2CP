@@ -663,7 +663,7 @@ class _CollectionState extends State<Collection> {
               
               Center(
                 child: Container(
-                  child: Image.asset("images/imm.png"),
+                  child: Image.asset("images/vagues.png"),
                 ),
               ),
             ],
