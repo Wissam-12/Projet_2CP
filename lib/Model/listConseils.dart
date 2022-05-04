@@ -26,6 +26,11 @@ class ConseilModel{
             contenu: "Une table joliment dressée stimule l'appétit des petits et des grands. Prêtez une réelle attention aux couverts des enfants, pour qu'ils puissent s'en servir sans difficulté. Ne vous attendez pas à ce qu'un enfant en bas âge puisse se servir correctement d'un couteau et d'une fourchette. Proposez-leur des couverts adaptés à leur âge... et laissez-les s'en servir à leur guise, de manière spontanée, quitte à leur donner de temps en temps quelques conseils pour mieux les utiliser. Ne forcez pas, ne donnez pas d'ordres, n'élevez pas la voix : petit à petit, ils finiront par très bien s'en sortir.",
             coleur: Color(0xFFB6DCDD),
         ),
+        ConseilModel(
+            titre: "Une jolie table",
+            contenu: "Une table joliment dressée stimule l'appétit des petits et des grands. Prêtez une réelle attention aux couverts des enfants, pour qu'ils puissent s'en servir sans difficulté. Ne vous attendez pas à ce qu'un enfant en bas âge puisse se servir correctement d'un couteau et d'une fourchette. Proposez-leur des couverts adaptés à leur âge... et laissez-les s'en servir à leur guise, de manière spontanée, quitte à leur donner de temps en temps quelques conseils pour mieux les utiliser. Ne forcez pas, ne donnez pas d'ordres, n'élevez pas la voix : petit à petit, ils finiront par très bien s'en sortir.",
+            coleur: Color(0xFFB6DCDD),
+        ),
     ];
 
     static Widget afficher() {
