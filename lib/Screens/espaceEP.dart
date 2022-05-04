@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'conseilCarte.dart';
+import '../Model/listConseils.dart';
 
 class ConseilsEP extends StatefulWidget {
   ConseilsEP({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _ConseilsEPState extends State<ConseilsEP> {
                   ),
                 ),
               ),
-              ConseilCarte(),
+              ConseilModel.afficher(),
             ],
           )),
       //SECOND PAGE LES RECETTTES
