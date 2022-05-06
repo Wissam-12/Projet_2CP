@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import '../google_sign_in.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Profil extends StatefulWidget {
   Profil({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class Profil extends StatefulWidget {
 }
 
 class _profilState extends State<Profil> {
+  File? image;
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
@@ -131,105 +133,142 @@ class _profilState extends State<Profil> {
                         borderRadius: BorderRadius.circular(20),
                         color: Color.fromRGBO(255, 164, 80, 1),
                       ),
-                      child: Center(
-                        child: Text(((user.displayName!).split(' '))[0],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w900,
-                              fontFamily: 'Rubik',
-                              fontSize: 32,
-                            )),
-                      )),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Stack(
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Container(
-                          width: 150, height: 150,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 164, 80, 1),
-                            borderRadius: BorderRadius.circular(75),
+                child: Center(
+                  child:Text(
+                      ((user.displayName!).split(' '))[0],
+                    textAlign:TextAlign.center ,
+                    style:TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontFamily: 'Rubik',
+                      fontSize: 32,
+                    )),
+                )
+              ),
+             SizedBox(height: 30,),
+             
+            
+              Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      width: 150,
+                      height:150,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(255, 164, 80, 1),
+                        borderRadius: BorderRadius.circular(75),
+                      ),
+                      child: ClipOval(
+                        child: Material(
+                          color: Colors.transparent,
+                          child: image == null ? Image(
+                            image: AssetImage("images/item.png",),
+                            fit: BoxFit.cover,
+                          ) : Image.file(
+                            image!,
+                            fit: BoxFit.cover,
                           ),
-                          // child: Image(image: AssetImage("images/3400_5_04 1.png",),height:130,width: 130,),
                         ),
                       ),
-                      Positioned(
-                        top: 5,
-                        right: 145,
-                        child: InkWell(
-                          onTap: () {},
-                          //  child: Image(image: AssetImage("images/Group 62.png")),
-                        ),
-                      ),
-                    ],
+                    ), 
                   ),
-                  SizedBox(height: 19),
-                  Stack(clipBehavior: Clip.none, children: [
-                    Positioned(
+                  
+                  Positioned(
+                    top: 5,
+                    right: 130,
+                    child: ClipOval(
                       child: Container(
-                        height: 24,
-                        width: 250,
+                        width: 40,
+                        height: 40,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(255, 164, 80, 1),
-                          borderRadius: BorderRadius.circular(15),
                         ),
-                        child: Center(
-                          child: LinearProgressIndicator(
-                            value: 0.5,
-                            valueColor:
-                                new AlwaysStoppedAnimation(Colors.white),
-                            backgroundColor: Color.fromRGBO(255, 164, 80, 1),
-                            minHeight: 12,
+                        child: IconButton(
+                          padding: EdgeInsets.all(3),
+                          constraints: BoxConstraints(),
+                          icon: CircleAvatar(
+                            backgroundColor: Color(0xFFFFF27D),
+                            child: Icon(
+                              Icons.edit,
+                              color: Color.fromRGBO(255, 164, 80, 1),
+                              size: 22,
+                            ),
                           ),
+                          onPressed: (){
+                            pickit();
+                          },
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: -19,
-                      left: -10,
-                      child: Container(
-                        height: 60, width: 60,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(255, 164, 80, 1),
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        //   child: Image(image: AssetImage('images/Group5.png')),
-                      ),
-                    ),
-                  ]),
-                  SizedBox(height: 48),
-                  SizedBox(
-                    height: 64,
-                    width: 292,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          SizedBox(width: (107 - 86)),
-                          // Image(image: AssetImage('images/bxs_book-bookmark.png')),
-                          SizedBox(
-                            width: 16,
-                          ),
-                          Text('Acquisition'),
-                        ],
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          elevation: 100,
-                          shadowColor: Color.fromRGBO(255, 164, 80, 1),
-                          primary: Color.fromRGBO(255, 164, 80, 1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                            fontFamily: 'Rubik',
-                            fontSize: 26,
-                          )),
+                  ),
+                ],
+              ),
+            SizedBox(height:19),
+            
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  
+                  child: Container(
+                  height: 24,width:250 ,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(255, 164, 80, 1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Center(child:LinearProgressIndicator(
+                    value: 0.5,
+                    valueColor: new AlwaysStoppedAnimation(Colors.white),
+                    backgroundColor: Color.fromRGBO(255, 164, 80, 1),
+                    minHeight: 12,),),
+            ),),
+            Positioned(
+              bottom:-19,left: -10,
+              child: Container(
+                padding: EdgeInsets.all(3),
+                height:60,width:60 ,
+                decoration: BoxDecoration(
+                  color:Color.fromRGBO(255, 164, 80, 1),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Container(
+                  height: 57,width: 57,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFF27D),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Image(
+                    image: AssetImage('images/pom.png')
+                  ),
+                ),
+                
+              ),
+            ),
+          ],
+          
+            ),
+            
+             SizedBox(height:48),
+             SizedBox(
+               height: 64, width: 292,
+               child: ElevatedButton(
+                 onPressed: () {},
+                 child:Row(children: [
+                    SizedBox(width:(107-86)),
+                    // Image(image: AssetImage('images/bxs_book-bookmark.png')), 
+                    SizedBox(width: 16,),Text('Acquisition'),
+                 ],
+
+                 ),
+                
+                  style: ElevatedButton.styleFrom(
+                    elevation: 100,
+                    shadowColor: Color.fromRGBO(255, 164, 80, 1),
+                    primary:Color.fromRGBO(255, 164, 80, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius:BorderRadius.circular(20),
                     ),
                   ),
                   SizedBox(height: 26),
@@ -321,5 +360,13 @@ class _profilState extends State<Profil> {
                 ],
               )
             ])));
+  }
+  pickit() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (image == null)return;
+    final imageTemporary = File(image.path);
+    setState((){
+      this.image = imageTemporary;
+    },);
   }
 }

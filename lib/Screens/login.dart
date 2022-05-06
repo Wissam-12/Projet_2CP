@@ -13,6 +13,8 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final scaffoldkey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
+  List<String> tags = ["All", "Salades", "Desserts", "Plats Chauds", "Sandwichs"];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,25 +118,25 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                  ]),
-              Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  alignment: Alignment.bottomLeft,
-                  //color: Colors.red,
-                  child: Image.asset("images/imm.png")),
-              Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  alignment: Alignment.topRight,
-                  child: Image.asset("images/Vector.png")),
-              Container(
-                width: 400,
-                height: 200,
-                alignment: Alignment.bottomRight,
-                child: Image.asset("images/pic.png"),
-              ),
-            ],
+                  ),
+                ),
+              ]),
+          Container(
+              width: double.infinity,
+              height: double.infinity,
+              alignment: Alignment.bottomLeft,
+              //color: Colors.red,
+              child: Image.asset("images/vagues.png")),
+          Container(
+              width: double.infinity,
+              height: double.infinity,
+              alignment: Alignment.topRight,
+              child: Image.asset("images/Vector.png")),
+          Container(
+            width: 400,
+            height: 200,
+            alignment: Alignment.bottomRight,
+            child: Image.asset("images/pic.png"),
           ),
         ));
   }
