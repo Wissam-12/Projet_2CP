@@ -8,23 +8,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      body: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
+        body: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                    child: CircularProgressIndicator()
-                );
+              return Center(child: CircularProgressIndicator());
             } else if (snapshot.hasData) {
-                return Accueil();
+              return Accueil();
             } else if (snapshot.hasError) {
-                return Center(
-                    child: Text('Oups, something went Wrong !')
-                );
+              return Center(child: Text('Oups, something went Wrong !'));
             } else {
-                return Login();
+              return Login();
             }
-        },
-      ),
-  );
+          },
+        ),
+      );
 }
