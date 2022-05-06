@@ -26,7 +26,7 @@ class _AccueilState extends State<Accueil> {
           })
         });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,18 +54,18 @@ class _AccueilState extends State<Accueil> {
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
-                            icon: Icon(
-                              Icons.group,
-                              color: Colors.white,
-                              size: 32,
-                            ),
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return ConseilsEP();
-                              }));
-                            },
+                          icon: Icon(
+                            Icons.group,
+                            color: Colors.white,
+                            size: 32,
                           ),
+                          onPressed: () {
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return ConseilsEP();
+                            }));
+                          },
+                        ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                     ),
