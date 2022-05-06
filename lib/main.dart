@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:provider/provider.dart'; 
+import 'package:projet/Screens/espaceEP.dart';
+import 'package:provider/provider.dart';
 import 'Screens/home.dart';
 import 'Screens/qcu.dart';
 import 'Screens/login.dart';
@@ -19,14 +20,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-  create: (context) => GoogleSignInProvider(),
-  child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
-          scaffoldBackgroundColor: Color(0xFFEBFFDB),
-          appBarTheme: AppBarTheme()),
-      home: HomePage(),
-      // routes: {"Login": (context) => Login()},
-    ),
-  );
+        create: (context) => GoogleSignInProvider(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: new ThemeData(
+              scaffoldBackgroundColor: Color(0xFFEBFFDB),
+              appBarTheme: AppBarTheme()),
+          home: ConseilsEP(),
+          // routes: {"Login": (context) => Login()},
+        ),
+      );
 }

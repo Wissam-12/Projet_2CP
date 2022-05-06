@@ -1,4 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+
+class Circ {
+  double points;
+  String s;
+  Circ(this.points, this.s);
+}
+
+// ON DOIT AVOIR UN OBJET USER QUI A SCORE COMME ATTRIBUT
+// JE SUPPOSE QUE SCORE EST UNE VARIABLE GLOBALE ET C LE SCORE DE L UTILISATEUR
+final int Score = 9000;
+final int maxPoints = 10000;
+double score_en100 = Score * 100 / maxPoints;
+dynamic getChartData() {
+  List<Circ> chartData = <Circ>[
+    Circ(0.1, "m"),
+    Circ(0.1, "m"),
+    Circ(score_en100, "j")
+  ];
+  return chartData;
+}
 
 class ConseilsEP extends StatefulWidget {
   ConseilsEP({Key? key}) : super(key: key);
@@ -24,7 +46,7 @@ class _ConseilsEPState extends State<ConseilsEP> {
                   style: TextStyle(
                       color: Colors.green,
                       fontSize: 42,
-                      fontFamily: 'Rubik-ExtraBold.ttf',
+                      fontFamily: 'Rubik',
                       fontWeight: FontWeight.w900),
                 ),
               ),
@@ -1261,6 +1283,36 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         color: Colors.black,
                       ),
                     ),
+                    Container(
+                      height: 120,
+                      width: 130,
+                      child: SfCartesianChart(
+                        primaryXAxis: CategoryAxis(
+                          isVisible: false,
+                          labelStyle: TextStyle(
+                              fontSize: 11, fontWeight: FontWeight.w500),
+                        ),
+                        primaryYAxis: NumericAxis(isVisible: false),
+                        plotAreaBorderWidth: 0,
+                        isTransposed: false,
+                        palette: <Color>[Color(0xffFF6F50)],
+                        series: <ChartSeries>[
+                          ColumnSeries<Jour, String>(
+                            dataSource: getColumnData(),
+                            xValueMapper: (Jour jour, _) => jour.jour,
+                            yValueMapper: (Jour jour, _) => jour.points,
+                          )
+                          // dataLabelSettings:
+                          //   DataLabelSettings(isVisible: true)),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        'D   L   M   M  J   V   S ',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -1296,14 +1348,45 @@ class _ConseilsEPState extends State<ConseilsEP> {
                     width: 200,
                     height: 40,
                     child: Text(
-                      "Vous avez collecté jusqu'à présent 60% du maximum de points, bravo !",
+                      "Vous avez collecté jusqu'à présent ${score_en100}% du maximum de points, bravo !",
                       style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
                     ),
                   ),
                 ],
               ),
-              //le cercle
-              Text("       le cercle"),
+              Container(
+                height: 100,
+                width: 100,
+                child: SfCircularChart(
+                    borderWidth: 0.05,
+                    margin: EdgeInsets.all(5),
+                    palette: <Color>[
+                      Color(0xff3DB86E)
+                    ],
+                    annotations: <CircularChartAnnotation>[
+                      CircularChartAnnotation(
+                        widget: Container(
+                          child: Text('${score_en100}% ',
+                              style: TextStyle(
+                                  color: Color(0xff8CB49C),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11)),
+                        ),
+                      )
+                    ],
+                    series: <CircularSeries>[
+                      // Renders radial bar chart
+
+                      RadialBarSeries<Circ, String>(
+                          useSeriesColor: true,
+                          trackOpacity: 0.3,
+                          dataSource: getChartData(),
+                          maximumValue: 100,
+                          xValueMapper: (Circ data, _) => data.s,
+                          yValueMapper: (Circ data, _) => data.points,
+                          cornerStyle: CornerStyle.bothCurve)
+                    ]),
+              ),
             ],
           ),
         ),
@@ -1346,4 +1429,23 @@ class _ConseilsEPState extends State<ConseilsEP> {
           ]),
     );
   }
+}
+
+class Jour {
+  String jour;
+  double points;
+  Jour(this.jour, this.points);
+}
+
+dynamic getColumnData() {
+  List<Jour> columnData = <Jour>[
+    Jour("D", 200),
+    Jour("L", 210),
+    Jour("Ma", 300),
+    Jour("Me", 102),
+    Jour("J", 100),
+    Jour("V", 130),
+    Jour("S", 150)
+  ];
+  return columnData;
 }
