@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:projet/Screens/espaceEP.dart';
+import 'package:provider/provider.dart';
+import 'Screens/home.dart';
+import 'Screens/qcu.dart';
+import 'Screens/login.dart';
 //import 'package:projet/Screens/puzzle.dart';
 import 'package:provider/provider.dart';
 import 'google_sign_in.dart';
-import 'package:projet/Screens/map.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,8 +27,7 @@ class MyApp extends StatelessWidget {
           theme: new ThemeData(
               scaffoldBackgroundColor: Color(0xFFEBFFDB),
               appBarTheme: AppBarTheme()),
-          home: map(),
-
+          home: ConseilsEP(),
           // routes: {"Login": (context) => Login()},
         ),
       );
