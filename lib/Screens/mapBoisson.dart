@@ -1,19 +1,20 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:projet/Screens/mapFecul.dart';
 
-class mapSucrerie extends StatefulWidget {
-  mapSucrerie({Key? key}) : super(key: key);
+class mapBoisson extends StatefulWidget {
+  mapBoisson({Key? key}) : super(key: key);
 
   @override
-  State<mapSucrerie> createState() => _mapSucrerieState();
+  State<mapBoisson> createState() => _mapBoissonState();
 }
 
-class _mapSucrerieState extends State<mapSucrerie> {
+class _mapBoissonState extends State<mapBoisson> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff2581c4),
+        backgroundColor: Color(0xff40bcc8),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -125,10 +126,10 @@ class _mapSucrerieState extends State<mapSucrerie> {
             child: ListView(reverse: true, children: [
               Stack(
                 children: [
-                  Image.asset("images/F2.png"),
+                  Image.asset("images/F4.png"),
 
                   Container(
-                    margin: EdgeInsets.only(left: 123, top: 74),
+                    margin: EdgeInsets.only(left: 121, top: 99),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -145,7 +146,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   ),
                   //*************************** */
                   Container(
-                    margin: EdgeInsets.only(left: 172, top: 125),
+                    margin: EdgeInsets.only(left: 171, top: 149),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -162,7 +163,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
 
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 230, top: 172),
+                    margin: EdgeInsets.only(left: 229, top: 199),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -179,7 +180,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   // //********************* */
 
                   Container(
-                    margin: EdgeInsets.only(left: 273, top: 240),
+                    margin: EdgeInsets.only(left: 271, top: 268),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -195,7 +196,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   ),
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 242, top: 309),
+                    margin: EdgeInsets.only(left: 241, top: 337),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -211,7 +212,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   ),
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 153, top: 309),
+                    margin: EdgeInsets.only(left: 150, top: 337),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -227,7 +228,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   ),
 
                   Container(
-                    margin: EdgeInsets.only(left: 114, top: 380),
+                    margin: EdgeInsets.only(left: 111, top: 409),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -244,7 +245,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
 
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 164, top: 451),
+                    margin: EdgeInsets.only(left: 161, top: 480),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -262,7 +263,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
 
                   //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 166, top: 540),
+                    margin: EdgeInsets.only(left: 164, top: 572),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -279,7 +280,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
 
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 122, top: 600),
+                    margin: EdgeInsets.only(left: 120, top: 634),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -296,7 +297,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   // //********************* */
                   //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 68, top: 663),
+                    margin: EdgeInsets.only(left: 67, top: 698),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -313,7 +314,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   // //********************* */
                   // //********************* */
                   Container(
-                    margin: EdgeInsets.only(left: 118, top: 718),
+                    margin: EdgeInsets.only(left: 115, top: 752),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -330,7 +331,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   // //********************* */
 
                   Container(
-                    margin: EdgeInsets.only(left: 198, top: 692),
+                    margin: EdgeInsets.only(left: 197, top: 728),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -345,7 +346,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 256, top: 743),
+                    margin: EdgeInsets.only(left: 256, top: 778),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -361,7 +362,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                   ),
 
                   Container(
-                    margin: EdgeInsets.only(left: 269, top: 818),
+                    margin: EdgeInsets.only(left: 270, top: 854),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -376,7 +377,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 168, top: 829),
+                    margin: EdgeInsets.only(left: 167, top: 866),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -391,7 +392,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 133, top: 896),
+                    margin: EdgeInsets.only(left: 132, top: 934),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -406,7 +407,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 225, top: 896),
+                    margin: EdgeInsets.only(left: 225, top: 935),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -421,7 +422,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 290, top: 932),
+                    margin: EdgeInsets.only(left: 290, top: 971),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -436,7 +437,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 296, top: 1000),
+                    margin: EdgeInsets.only(left: 296, top: 1040),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -451,7 +452,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 270, top: 1062),
+                    margin: EdgeInsets.only(left: 270, top: 1100),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -466,7 +467,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 177, top: 1064),
+                    margin: EdgeInsets.only(left: 176, top: 1104),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -481,7 +482,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 96, top: 1029),
+                    margin: EdgeInsets.only(left: 93, top: 1071),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -496,7 +497,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 42, top: 1085),
+                    margin: EdgeInsets.only(left: 38, top: 1129),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -511,7 +512,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 89, top: 1157),
+                    margin: EdgeInsets.only(left: 86, top: 1201),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -526,7 +527,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 182, top: 1148),
+                    margin: EdgeInsets.only(left: 181, top: 1190),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -541,7 +542,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 263, top: 1153),
+                    margin: EdgeInsets.only(left: 262, top: 1192),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -556,7 +557,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 230, top: 54),
+                    margin: EdgeInsets.only(left: 220, top: 95),
                     child: CircleAvatar(
                       radius: 28,
                       child: IconButton(
@@ -566,10 +567,10 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           size: 38,
                         ),
                         onPressed: () {
-                          // Navigator.of(context)
-                          //     .push(MaterialPageRoute(builder: (context) {
-                          //   return mapfruits();
-                          // }));
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return mapFecul();
+                          }));
                         },
                       ),
                       backgroundColor: Colors.transparent,
