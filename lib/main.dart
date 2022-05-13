@@ -7,6 +7,8 @@ import 'Screens/home.dart';
 import 'Screens/qcu.dart';
 import 'Screens/login.dart';
 import 'google_sign_in.dart';
+import 'Screens/notice.dart';
+import 'Screens/soundButton.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: new ThemeData(
               scaffoldBackgroundColor: Color(0xFFEBFFDB),
               appBarTheme: AppBarTheme()),
-          home: ConseilsEP(),
+          home: Notice(),
           // routes: {"Login": (context) => Login()},
         ),
       );
