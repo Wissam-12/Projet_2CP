@@ -1394,9 +1394,9 @@ class _ConseilsEPState extends State<ConseilsEP> {
           alignment: Alignment.topCenter,
           margin: EdgeInsets.only(top: 1),
           width: 180,
-          height: 130,
+          height: 166,
           child: Image(
-            image: AssetImage('images/stat.png'),
+            image: AssetImage('images/image_statistiques.png'),
             fit: BoxFit.fill,
           ),
         ),

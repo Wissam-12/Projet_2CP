@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: new ThemeData(
               scaffoldBackgroundColor: Color(0xFFEBFFDB),
               appBarTheme: AppBarTheme()),
-          home: Notice(),
+          home: ConseilsEP(),
           // routes: {"Login": (context) => Login()},
         ),
       );
