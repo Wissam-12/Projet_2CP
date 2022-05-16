@@ -5,6 +5,9 @@ import '../back/quizz.dart';
 import 'profil.dart';
 import 'qcu.dart';
 import 'espaceEP.dart';
+import 'package:flutter/services.dart';
+import 'puzzleTry.dart';
+import '../jigsaw_puzzle/jigsaw_puzzle_page.dart';
 
 class Accueil extends StatefulWidget {
   Accueil({Key? key}) : super(key: key);
@@ -196,7 +199,9 @@ class _AccueilState extends State<Accueil> {
                   onPressed: () {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return Qcu(quizzes[1], user);
+                      //return JigsawPuzzlePage();
+                      //return PuzzleWidget;
+                      return Qcu(quizzes[0], user);
                     }));
                   },
                   child: Text("jouer"),

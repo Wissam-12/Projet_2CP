@@ -13,7 +13,6 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final scaffoldkey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> globalFormKey = new GlobalKey<FormState>();
-  List<String> tags = ["All", "Salades", "Desserts", "Plats Chauds", "Sandwichs"];
   
   @override
   Widget build(BuildContext context) {

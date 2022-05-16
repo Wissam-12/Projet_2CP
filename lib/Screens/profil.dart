@@ -18,6 +18,7 @@ class _profilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
       final user = FirebaseAuth.instance.currentUser!;
+      final uid = user.uid;
 
     return Scaffold(
 

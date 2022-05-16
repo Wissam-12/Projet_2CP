@@ -6,6 +6,8 @@ import 'Screens/home.dart';
 import 'Screens/qcu.dart';
 import 'Screens/login.dart';
 import 'google_sign_in.dart';
+import 'package:flutter/services.dart';
+import 'jigsaw_puzzle/jigsaw_puzzle_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
