@@ -2,15 +2,16 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:projet/Screens/map.dart';
+import 'package:projet/Screens/mapPrincip.dart';
 
-class mapfruits extends StatefulWidget {
-  mapfruits({Key? key}) : super(key: key);
+class maphig extends StatefulWidget {
+  maphig({Key? key}) : super(key: key);
 
   @override
-  State<mapfruits> createState() => _mapfruitsState();
+  State<maphig> createState() => _maphigState();
 }
 
-class _mapfruitsState extends State<mapfruits> {
+class _maphigState extends State<maphig> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,11 +129,11 @@ class _mapfruitsState extends State<mapfruits> {
               child: ListView(reverse: true, children: [
                 Stack(
                   children: [
-                    Image.asset("images/F3.png"),
+                    Image.asset("images/F.png"),
 
 // ------------------------------- DEBUT DES NIVEAUX--------------------------------
                     Container(
-                      margin: EdgeInsets.only(left: 164, top: 100),
+                      margin: EdgeInsets.only(left: 148, top: 100),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -1146,7 +1147,12 @@ class _mapfruitsState extends State<mapfruits> {
               margin: EdgeInsets.only(left: 315),
               child: FloatingActionButton(
                   backgroundColor: Color(0xffFFA450),
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return mapPrincp();
+                    }));
+                  }),
                   child: Container(
                     height: 60,
                     width: 60,
