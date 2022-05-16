@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import '../Model/listConseils.dart';
-import '../Model/listRecettes.dart';
 
 class Circ {
   double points;
@@ -31,11 +30,23 @@ class ConseilsEP extends StatefulWidget {
 }
 
 class _ConseilsEPState extends State<ConseilsEP> {
-  List<String> tags = ["All", "Salades", "Desserts", "Plats Chauds", "Sandwichs"];
-  List<Color> colTags = [Color(0xff3DB86E), Color(0xffD1F5CA), Color(0xffD1F5CA), Color(0xffD1F5CA), Color(0xffD1F5CA)];
+  List<String> tags = [
+    "All",
+    "Salades",
+    "Desserts",
+    "Plats Chauds",
+    "Sandwichs"
+  ];
+  List<Color> colTags = [
+    Color(0xff3DB86E),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA)
+  ];
   String selectedTag = "All";
   int selectedindex = 0;
-  List<Widget> pages (Widget lsTags){
+  List<Widget> pages(Widget lsTags) {
     return [
       Container(
           padding: EdgeInsets.only(top: 120),
@@ -96,12 +107,11 @@ class _ConseilsEPState extends State<ConseilsEP> {
           // LIST OF TYPE OF THE DISH :
           lsTags,
 
-
           // ELEMENT OF "COLUMN"
           // ROW OF COLUMN => THE DISHES
           Container(
             height: 475, //checked
-            child: RecetteModel.afficher(selected()),
+            //  child: RecetteModel.afficher(selected()),
           ),
         ]),
       ),
@@ -152,7 +162,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         padding: EdgeInsets.only(top: 10, bottom: 15),
                         child: Text(
                           "Vous êtes sur une séquence de",
-                          style: (TextStyle(fontFamily: 'Poppins', fontSize: 8)),
+                          style:
+                              (TextStyle(fontFamily: 'Poppins', fontSize: 8)),
                         ),
                       ),
                       Text("5",
@@ -165,7 +176,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         padding: EdgeInsets.only(bottom: 10),
                         child: Text(
                           "Jours",
-                          style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
+                          style:
+                              (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
                         ),
                       ),
                       Text(
@@ -224,7 +236,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                   children: [
                     Container(
                         alignment: Alignment.topLeft,
-                        padding: EdgeInsets.only(top: 20, right: 60, bottom: 20),
+                        padding:
+                            EdgeInsets.only(top: 20, right: 60, bottom: 20),
                         child: Text(
                           "Points totaux",
                           style: TextStyle(
@@ -397,7 +410,7 @@ class _ConseilsEPState extends State<ConseilsEP> {
       ),
     ];
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -424,10 +437,12 @@ class _ConseilsEPState extends State<ConseilsEP> {
           ]),
     );
   }
-  selected(){
+
+  selected() {
     return selectedTag;
   }
-  listTags(List<String> tags, List<Color> coleurs){
+
+  listTags(List<String> tags, List<Color> coleurs) {
     return Container(
       width: double.infinity,
       //padding: EdgeInsets.only(bottom: 30), //CHECKED
@@ -439,41 +454,40 @@ class _ConseilsEPState extends State<ConseilsEP> {
             width: 42,
           ),
           Row(
-            children: List<Widget>.generate(tags.length, (int index){
+            children: List<Widget>.generate(tags.length, (int index) {
               return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedTag = tags[index];
-                    for(var i = 0; i < tags.length; i++){
-                      if (i == index){
-                        coleurs[index] = Color(0xff3DB86E);
-                      }else{
-                        coleurs[i] = Color(0xffD1F5CA);
+                  onTap: () {
+                    setState(() {
+                      selectedTag = tags[index];
+                      for (var i = 0; i < tags.length; i++) {
+                        if (i == index) {
+                          coleurs[index] = Color(0xff3DB86E);
+                        } else {
+                          coleurs[i] = Color(0xffD1F5CA);
+                        }
                       }
-                    }
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    color: coleurs[index],
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  width: (tags[index].length)*12 + 10,
-                  // height: 56,
-                  child: Center(
-                    child: Text(
-                      tags[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w500),
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      color: coleurs[index],
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                  ),
-                )
-              );
+                    width: (tags[index].length) * 12 + 10,
+                    // height: 56,
+                    child: Center(
+                      child: Text(
+                        tags[index],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ));
             }),
           ),
           Container(

@@ -1,16 +1,16 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:projet/Screens/mapGrasse.dart';
+import 'package:projet/Screens/mapfruits.dart';
 
-class map extends StatefulWidget {
-  const map({Key? key}) : super(key: key);
+class mapFecul extends StatefulWidget {
+  mapFecul({Key? key}) : super(key: key);
 
   @override
-  State<map> createState() => _mapState();
+  State<mapFecul> createState() => _mapFeculState();
 }
 
-class _mapState extends State<map> {
+class _mapFeculState extends State<mapFecul> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,11 +129,11 @@ class _mapState extends State<map> {
               child: ListView(reverse: true, children: [
                 Stack(
                   children: [
-                    Image.asset("images/F1.png"),
+                    Image.asset("images/F5.png"),
 
 // ------------------------------- DEBUT DES NIVEAUX--------------------------------
                     Container(
-                      margin: EdgeInsets.only(left: 238, top: 30),
+                      margin: EdgeInsets.only(left: 241, top: 140),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -145,7 +145,7 @@ class _mapState extends State<map> {
                           onPressed: () {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return mapGrasse();
+                              return mapfruits();
                             }));
                           },
                         ),
@@ -153,7 +153,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 273, top: 106),
+                      margin: EdgeInsets.only(left: 273, top: 208),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -177,7 +177,7 @@ class _mapState extends State<map> {
                     ),
                     //*************************** */
                     Container(
-                      margin: EdgeInsets.only(left: 246, top: 180),
+                      margin: EdgeInsets.only(left: 246, top: 280),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -194,90 +194,7 @@ class _mapState extends State<map> {
 
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 151, top: 194),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 70, top: 238),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 115, top: 287),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 200, top: 300),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-
-                    Container(
-                      margin: EdgeInsets.only(left: 253, top: 358),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 268, top: 424),
+                      margin: EdgeInsets.only(left: 155, top: 294),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -295,24 +212,7 @@ class _mapState extends State<map> {
 
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 205, top: 487),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 118, top: 487),
+                      margin: EdgeInsets.only(left: 76, top: 338),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -328,7 +228,7 @@ class _mapState extends State<map> {
                     ),
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 168, top: 537),
+                      margin: EdgeInsets.only(left: 119, top: 387),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -343,9 +243,24 @@ class _mapState extends State<map> {
                       ),
                     ),
                     //********************* */
-                    //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 227, top: 586),
+                      margin: EdgeInsets.only(left: 204, top: 400),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+
+                    Container(
+                      margin: EdgeInsets.only(left: 254, top: 454),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -362,7 +277,92 @@ class _mapState extends State<map> {
 
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 270, top: 656),
+                      margin: EdgeInsets.only(left: 268, top: 519),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 207, top: 583),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 123, top: 581),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 172, top: 632),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 230, top: 680),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 272, top: 748),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -378,7 +378,7 @@ class _mapState extends State<map> {
                     //********************* */
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 240, top: 725),
+                      margin: EdgeInsets.only(left: 242, top: 816),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -395,7 +395,7 @@ class _mapState extends State<map> {
                     //********************* */
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 149, top: 727),
+                      margin: EdgeInsets.only(left: 152, top: 817),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -412,24 +412,7 @@ class _mapState extends State<map> {
                     //********************* */
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 108, top: 799),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 160, top: 872),
+                      margin: EdgeInsets.only(left: 113, top: 889),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -461,9 +444,45 @@ class _mapState extends State<map> {
                       ),
                     ),
                     //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 167, top: 1049),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+
+                    //********************* */
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 117, top: 1028),
+                      margin: EdgeInsets.only(left: 120, top: 1108),
+                      child: CircleAvatar(
+                        radius: 28,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.lock,
+                            color: Color.fromARGB(255, 53, 52, 52),
+                            size: 32,
+                          ),
+                          onPressed: () {},
+                        ),
+                        backgroundColor: Colors.transparent,
+                      ),
+                    ),
+                    //********************* */
+
+                    //********************* */
+                    Container(
+                      margin: EdgeInsets.only(left: 69, top: 1173),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -480,24 +499,7 @@ class _mapState extends State<map> {
                     //********************* */
                     //********************* */
                     Container(
-                      margin: EdgeInsets.only(left: 64, top: 1092),
-                      child: CircleAvatar(
-                        radius: 28,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.lock,
-                            color: Color.fromARGB(255, 53, 52, 52),
-                            size: 32,
-                          ),
-                          onPressed: () {},
-                        ),
-                        backgroundColor: Colors.transparent,
-                      ),
-                    ),
-                    //********************* */
-                    //********************* */
-                    Container(
-                      margin: EdgeInsets.only(left: 114, top: 1146),
+                      margin: EdgeInsets.only(left: 118, top: 1224),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -514,7 +516,7 @@ class _mapState extends State<map> {
                     //********************* */
 
                     Container(
-                      margin: EdgeInsets.only(left: 196, top: 1122),
+                      margin: EdgeInsets.only(left: 199, top: 1199),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -530,7 +532,7 @@ class _mapState extends State<map> {
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(left: 255, top: 1172),
+                      margin: EdgeInsets.only(left: 256, top: 1252),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -545,7 +547,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 269, top: 1248),
+                      margin: EdgeInsets.only(left: 269, top: 1325),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -561,7 +563,7 @@ class _mapState extends State<map> {
                     ),
 
                     Container(
-                      margin: EdgeInsets.only(left: 165, top: 1260),
+                      margin: EdgeInsets.only(left: 169, top: 1336),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -576,7 +578,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 130, top: 1327),
+                      margin: EdgeInsets.only(left: 134, top: 1404),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -591,7 +593,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 223, top: 1326),
+                      margin: EdgeInsets.only(left: 226, top: 1404),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -606,7 +608,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 288, top: 1364),
+                      margin: EdgeInsets.only(left: 291, top: 1441),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -621,7 +623,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 295, top: 1434),
+                      margin: EdgeInsets.only(left: 296, top: 1506),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -636,7 +638,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 269, top: 1495),
+                      margin: EdgeInsets.only(left: 270, top: 1566),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -651,7 +653,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 173, top: 1498),
+                      margin: EdgeInsets.only(left: 177, top: 1574),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -666,7 +668,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 92, top: 1465),
+                      margin: EdgeInsets.only(left: 96, top: 1538),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -681,7 +683,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 35, top: 1522),
+                      margin: EdgeInsets.only(left: 42, top: 1594),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -696,7 +698,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 83, top: 1596),
+                      margin: EdgeInsets.only(left: 89, top: 1665),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -711,7 +713,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 179, top: 1587),
+                      margin: EdgeInsets.only(left: 182, top: 1655),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
@@ -726,7 +728,7 @@ class _mapState extends State<map> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 262, top: 1587),
+                      margin: EdgeInsets.only(left: 262, top: 1656),
                       child: CircleAvatar(
                         radius: 28,
                         child: IconButton(
