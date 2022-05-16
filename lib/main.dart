@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:projet/Screens/maphig.dart';
-
 import 'package:provider/provider.dart';
 import 'google_sign_in.dart';
 
@@ -25,7 +23,6 @@ class MyApp extends StatelessWidget {
               scaffoldBackgroundColor: Color(0xFFEBFFDB),
               appBarTheme: AppBarTheme()),
           home: maphig(),
-
           // routes: {"Login": (context) => Login()},
         ),
       );
