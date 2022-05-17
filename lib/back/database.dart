@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'quizz.dart';
 
+// ignore: deprecated_member_use
 final databaseReference = FirebaseDatabase.instance.reference();
 
-
-DatabaseReference saveQuizz(Quizz quizz){
-    var id = databaseReference.child('Quizzes/').push();
-    id.set(quizz.toJson());
-    return id;
+DatabaseReference saveQuizz(Quizz quizz) {
+  var id = databaseReference.child('Quizzes/').push();
+  id.set(quizz.toJson());
+  return id;
 }
 
 // DatabaseReference saveUser(UserInfo cUser){

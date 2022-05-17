@@ -5,9 +5,7 @@ import '../back/quizz.dart';
 import 'profil.dart';
 import 'qcu.dart';
 import 'espaceEP.dart';
-import 'package:flutter/services.dart';
-import 'puzzleTry.dart';
-import '../jigsaw_puzzle/jigsaw_puzzle_page.dart';
+import 'mapfruits.dart';
 
 class Accueil extends StatefulWidget {
   Accueil({Key? key}) : super(key: key);
@@ -63,10 +61,10 @@ class _AccueilState extends State<Accueil> {
                               size: 32,
                             ),
                             onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return ConseilsEP();
-                              }));
+                              // Navigator.of(context)
+                              //     .push(MaterialPageRoute(builder: (context) {
+                              //   return ConseilsEP();
+                              // }));
                             },
                           ),
                         backgroundColor: Color(0xffFFA450),
@@ -122,10 +120,10 @@ class _AccueilState extends State<Accueil> {
                       margin: EdgeInsets.only(right: 8),
                       child: MaterialButton(
                         onPressed: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return Profil();
-                          }));
+                          // Navigator.of(context)
+                          //     .push(MaterialPageRoute(builder: (context) {
+                          //   return Profil();
+                          // }));
                         },
                         height: 70,
                         shape: CircleBorder(),
@@ -201,7 +199,8 @@ class _AccueilState extends State<Accueil> {
                         .push(MaterialPageRoute(builder: (context) {
                       //return JigsawPuzzlePage();
                       //return PuzzleWidget;
-                      return Qcu(quizzes[0], user);
+                      //return Qcu(quizzes[0], user);
+                      return mapfruits();
                     }));
                   },
                   child: Text("jouer"),
