@@ -396,6 +396,17 @@ class _ConseilsEPState extends State<ConseilsEP> {
               ),
             ],
           ),
+<<<<<<< HEAD
+        ),
+        Container(
+          alignment: Alignment.topCenter,
+          margin: EdgeInsets.only(top: 1),
+          width: 180,
+          height: 166,
+          child: Image(
+            image: AssetImage('images/image_statistiques.png'),
+            fit: BoxFit.fill,
+=======
           Container(
             alignment: Alignment.topCenter,
             margin: EdgeInsets.only(top: 1),
@@ -405,6 +416,7 @@ class _ConseilsEPState extends State<ConseilsEP> {
               image: AssetImage('images/stat.png'),
               fit: BoxFit.fill,
             ),
+>>>>>>> 55bf5f0e37b3aa01e78c893c7e157a96a8247a94
           ),
         ],
       ),
