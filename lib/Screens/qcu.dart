@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
 import '../back/quizz.dart';
 import 'dart:io';
+import 'package:audioplayers/audioplayers.dart';
 
 class Qcu extends StatefulWidget {
   final Quizz quizz;
@@ -49,7 +50,10 @@ class _QcuState extends State<Qcu> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                final player = AudioCache(prefix : 'audio/');
+                                player.play('buttonsound.mp3');
+                              }),
                           backgroundColor: Color(0xffFFA450),
                         ),
                       ),
@@ -95,14 +99,20 @@ class _QcuState extends State<Qcu> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                final player = AudioCache(prefix : 'audio/');
+                                player.play('buttonsound.mp3');
+                              }),
                         ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            final player = AudioCache(prefix : 'audio/');
+                            player.play('buttonsound.mp3');
+                          },
                           height: 70,
                           shape: CircleBorder(),
                           child: CircleAvatar(

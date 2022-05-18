@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:projet/gestionSon.dart';
 import 'package:provider/provider.dart'; 
 import '../google_sign_in.dart';
 import 'home.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import 'package:audioplayers/audioplayers.dart';
+//import 'package:flame_audio/flame_audio.dart';
 
 class Profil extends StatefulWidget {
   Profil({Key? key}) : super(key: key);
@@ -17,15 +20,15 @@ class _profilState extends State<Profil> {
   File? image;
   @override
   Widget build(BuildContext context) {
-      final user = FirebaseAuth.instance.currentUser!;
+      //final user = FirebaseAuth.instance.currentUser!;
 
     return Scaffold(
-
+      
         ///**************************************************************** */
         body: Container(
           color: Color.fromRGBO(235, 255, 219, 1),
             child: Stack(
-     
+    
       alignment: Alignment.topCenter,
       children: [
         CustomScrollView(
@@ -49,7 +52,9 @@ class _profilState extends State<Profil> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                              }),
                           backgroundColor: Color(0xffFFA450),
                         ),
                       ),
@@ -91,18 +96,23 @@ class _profilState extends State<Profil> {
                         child: Container(
                           child: IconButton(
                               icon: Icon(
-                                Icons.music_note,
+                                Icons.settings,
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                                showDialogFunc(context);                               
+                              }),
                         ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                           height: 70,
                           shape: CircleBorder(),
                           child: CircleAvatar(
@@ -122,7 +132,6 @@ class _profilState extends State<Profil> {
           ],
         ),
         //****************************************************** */
-        
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           
@@ -139,7 +148,8 @@ class _profilState extends State<Profil> {
                       ),
                 child: Center(
                   child:Text(
-                      ((user.displayName!).split(' '))[0],
+                    'hi',
+                      //((user.displayName!).split(' '))[0],
                     textAlign:TextAlign.center ,
                     style:TextStyle(
                       color: Colors.white,
@@ -258,7 +268,10 @@ class _profilState extends State<Profil> {
              SizedBox(
                height: 64, width: 292,
                child: ElevatedButton(
-                 onPressed: () {},
+                
+                 onPressed: () {
+                    gestionSfx();
+                 },
                  child:Row(children: [
                     SizedBox(width:(107-86)),
                     // Image(image: AssetImage('images/bxs_book-bookmark.png')), 
@@ -288,7 +301,9 @@ class _profilState extends State<Profil> {
              SizedBox(height:26),
              SizedBox(
                height: 64, width: 292,
-              child:ElevatedButton(onPressed: () {},
+              child:ElevatedButton(onPressed: () {
+                gestionSfx();
+              },
                 child: Row(children: [
                   SizedBox(width:(107-86)),
                   Icon(Icons.star,color: Colors.white,),
@@ -315,8 +330,9 @@ class _profilState extends State<Profil> {
                height: 64, width: 292,
                 child:ElevatedButton(
                   onPressed: () {
-                        final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-                        provider.logout();
+                    gestionSfx(); 
+                    final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
+                    provider.logout();
                   },
                   child: Row(
                 children: [

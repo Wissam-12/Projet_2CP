@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Vrai_Faux extends StatefulWidget {
   Vrai_Faux({Key? key}) : super(key: key);
@@ -39,7 +40,10 @@ class _vraiFauxState extends State<Vrai_Faux> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                final player = AudioCache(prefix : 'audio/');
+                                player.play('buttonsound.mp3');
+                              }),
                           backgroundColor: Color(0xffFFA450),
                         ),
                       ),
@@ -85,14 +89,20 @@ class _vraiFauxState extends State<Vrai_Faux> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                final player = AudioCache(prefix : 'audio/');
+                                player.play('buttonsound.mp3');
+                              }),
                         ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            final player = AudioCache(prefix : 'audio/');
+                            player.play('buttonsound.mp3');
+                          },
                           height: 70,
                           shape: CircleBorder(),
                           child: CircleAvatar(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:projet/gestionSon.dart';
 
 class Classement extends StatefulWidget {
   Classement({Key? key}) : super(key: key);
@@ -39,7 +41,9 @@ class _ClassementState extends State<Classement> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                              }),
                           backgroundColor: Color(0xffFFA450),
                         ),
                       ),
@@ -81,18 +85,22 @@ class _ClassementState extends State<Classement> {
                         child: Container(
                           child: IconButton(
                               icon: Icon(
-                                Icons.music_note,
+                                Icons.tiktok,
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                              }),
                         ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                           height: 70,
                           shape: CircleBorder(),
                           child: CircleAvatar(

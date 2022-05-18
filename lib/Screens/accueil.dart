@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
@@ -5,20 +7,24 @@ import '../back/quizz.dart';
 import 'profil.dart';
 import 'qcu.dart';
 import 'espaceEP.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:projet/gestionSon.dart';
 
 class Accueil extends StatefulWidget {
   Accueil({Key? key}) : super(key: key);
 
   @override
   State<Accueil> createState() => _AccueilState();
+  
 }
 
 class _AccueilState extends State<Accueil> {
-  final user = FirebaseAuth.instance.currentUser!;
+  //final user = FirebaseAuth.instance.currentUser!;
   List<Quizz> quizzes = [];
 
   @override
   void initState() {
+    // getPref();
     super.initState();
     getQuizzes().then((quizzes) => {
           this.setState(() {
@@ -26,7 +32,7 @@ class _AccueilState extends State<Accueil> {
           })
         });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +66,7 @@ class _AccueilState extends State<Accueil> {
                               size: 32,
                             ),
                             onPressed: () {
+                              gestionSfx();
                               Navigator.of(context)
                                   .push(MaterialPageRoute(builder: (context) {
                                 return ConseilsEP();
@@ -107,11 +114,14 @@ class _AccueilState extends State<Accueil> {
                       child: Container(
                         child: IconButton(
                             icon: Icon(
-                              Icons.music_note,
+                              Icons.settings,
                               color: Colors.white,
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {             
+                              gestionSfx();                            
+                              showDialogFunc(context);
+                            }),
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
@@ -119,6 +129,8 @@ class _AccueilState extends State<Accueil> {
                       margin: EdgeInsets.only(right: 8),
                       child: MaterialButton(
                         onPressed: () {
+                          
+                          gestionSfx();
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             return Profil();
@@ -159,7 +171,8 @@ class _AccueilState extends State<Accueil> {
               ),
               Text('     '),
               Text(
-                ((user.displayName!).split(' '))[0],
+                'hi',
+                //((user.displayName!).split(' '))[0],
                 style: TextStyle(
                     fontFamily: 'Rubik-ExtraBold',
                     fontSize: 42,
@@ -194,10 +207,12 @@ class _AccueilState extends State<Accueil> {
                 width: 177,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Qcu(quizzes[1], user);
-                    }));
+                    
+                    gestionSfx();
+                    // Navigator.of(context)
+                    //     .push(MaterialPageRoute(builder: (context) {
+                    //   return Qcu(quizzes[1], user);
+                    // }));
                   },
                   child: Text("jouer"),
                   style: ElevatedButton.styleFrom(
@@ -225,3 +240,5 @@ class _AccueilState extends State<Accueil> {
     ])));
   }
 }
+
+
