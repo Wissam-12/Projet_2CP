@@ -1,33 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../back/database.dart';
-import '../back/quizz.dart';
-import 'profil.dart';
-import 'qcu.dart';
-import 'espaceEP.dart';
-import 'mapfruits.dart';
 
-class Accueil extends StatefulWidget {
-  Accueil({Key? key}) : super(key: key);
+class UserName extends StatefulWidget {
+  UserName({Key? key}) : super(key: key);
 
   @override
-  State<Accueil> createState() => _AccueilState();
+  State<UserName> createState() => _UserNameState();
 }
 
-class _AccueilState extends State<Accueil> {
+class _UserNameState extends State<UserName> {
   final user = FirebaseAuth.instance.currentUser!;
-  List<Quizz> quizzes = [];
 
-  @override
-  void initState() {
-    super.initState();
-    getQuizzes().then((quizzes) => {
-          this.setState(() {
-            this.quizzes = quizzes;
-          })
-        });
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +19,7 @@ class _AccueilState extends State<Accueil> {
           width: double.infinity,
           height: double.infinity,
           alignment: Alignment.bottomLeft,
-          //color: Colors.red,
+          color: Colors.red,
           child: Image.asset("images/grp.png")),
       CustomScrollView(
         slivers: [
@@ -61,10 +43,10 @@ class _AccueilState extends State<Accueil> {
                               size: 32,
                             ),
                             onPressed: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return ConseilsEP();
-                              }));
+                              // Navigator.of(context)
+                              //     .push(MaterialPageRoute(builder: (context) {
+                              //   return ConseilsEP();
+                              // }));
                             },
                           ),
                         backgroundColor: Color(0xffFFA450),
@@ -226,6 +208,8 @@ class _AccueilState extends State<Accueil> {
           ),
         ))
       ])
-    ])));
+    ])
+    
+    ));
   }
 }

@@ -1150,7 +1150,7 @@ class _maphigState extends State<maphig> {
                   onPressed: (() {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return mapPrincp();
+                      return MapPrincp();
                     }));
                   }),
                   child: Container(

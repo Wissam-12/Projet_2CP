@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class mapPrincp extends StatefulWidget {
-  mapPrincp({Key? key}) : super(key: key);
+class MapPrincp extends StatefulWidget {
+  MapPrincp({Key? key}) : super(key: key);
 
   @override
-  State<mapPrincp> createState() => _mapPrincpState();
+  State<MapPrincp> createState() => _MapPrincpState();
 }
 
-class _mapPrincpState extends State<mapPrincp> {
+class _MapPrincpState extends State<MapPrincp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -183,7 +183,9 @@ class _mapPrincpState extends State<mapPrincp> {
               margin: EdgeInsets.only(left: 15),
               child: FloatingActionButton(
                 backgroundColor: Color(0xffFFA450),
-                onPressed: (() {}),
+                onPressed: (() {
+                  Navigator.pop(context);
+                }),
                 child: CircleAvatar(
                   radius: 28,
                   child: Container(

@@ -6,10 +6,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
 import '../back/quizz.dart';
 import 'qcu.dart';
+import 'mapPrincip.dart';
 
 class mapfruits extends StatefulWidget {
-  mapfruits({Key? key}) : super(key: key);
+  final List<Quizz> quizzes;
 
+  mapfruits(this.quizzes);
   @override
   State<mapfruits> createState() => _mapfruitsState();
 }
@@ -17,18 +19,6 @@ class mapfruits extends StatefulWidget {
 class _mapfruitsState extends State<mapfruits> {
   final user = FirebaseAuth.instance.currentUser!;
 
-  List<Quizz> quizzes = [];
-
-  @override
-  void initState() {
-    super.initState();
-    getQuizzes().then((quizzes) => {
-          this.setState(() {
-            this.quizzes = quizzes;
-          })
-        });
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1140,7 +1130,7 @@ class _mapfruitsState extends State<mapfruits> {
                           onPressed: () {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return Qcu(quizzes[1], user);
+                              return Qcu(this.widget.quizzes, 1, 0, user);
                             }));
                           },
                         ),
@@ -1160,7 +1150,7 @@ class _mapfruitsState extends State<mapfruits> {
                           onPressed: () {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return Qcu(quizzes[0], user);
+                              return Qcu(this.widget.quizzes, 0, 1,  user);
                             }));
                           },
                         ),
@@ -1176,7 +1166,12 @@ class _mapfruitsState extends State<mapfruits> {
               margin: EdgeInsets.only(left: 315),
               child: FloatingActionButton(
                   backgroundColor: Color(0xffFFA450),
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return MapPrincp();
+                    }));
+                  }),
                   child: Container(
                     height: 60,
                     width: 60,

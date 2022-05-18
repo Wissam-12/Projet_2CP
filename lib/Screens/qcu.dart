@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import '../back/database.dart';
 import '../back/quizz.dart';
+import 'notice.dart';
 //import 'dart:io';
 
 class Qcu extends StatefulWidget {
-  final Quizz quizz;
+  final List<Quizz> quizzes;
+  final int quizz;
+  final int next;
   final User user;
 
-  Qcu(this.quizz, this.user);
+  Qcu(this.quizzes, this.quizz, this.next, this.user);
 
   @override
   State<Qcu> createState() => _QcuState();
@@ -173,7 +176,7 @@ class _QcuState extends State<Qcu> {
                         borderRadius: BorderRadius.circular(24),
                       ),
                       child: Center(
-                          child: Text(this.widget.quizz.question,
+                          child: Text(this.widget.quizzes[this.widget.quizz].question,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Color.fromRGBO(61, 184, 110, 1),
@@ -184,7 +187,7 @@ class _QcuState extends State<Qcu> {
                     SizedBox(height: 26),
                     Container(
                       height:
-                          (11.2 + 95.2 * this.widget.quizz.choices.length + 39),
+                          (11.2 + 95.2 * this.widget.quizzes[this.widget.quizz].choices.length + 39),
                       width: 362,
                       decoration: BoxDecoration(
                         color: Color.fromRGBO(244, 237, 171, 1),
@@ -210,7 +213,7 @@ class _QcuState extends State<Qcu> {
   listchoices() {
     return Column(
       children:
-          List<Widget>.generate(this.widget.quizz.choices.length, (int index) {
+          List<Widget>.generate(this.widget.quizzes[this.widget.quizz].choices.length, (int index) {
         return Column(
           children: [
             SizedBox(height: 36.6),
@@ -225,8 +228,9 @@ class _QcuState extends State<Qcu> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (index == this.widget.quizz.rightAnswer) {
-                      print("Gagner");
+                    if (index == this.widget.quizzes[this.widget.quizz].rightAnswer) {
+                      //print("Gagner");
+                      _tripEditModalBottonSheet(context, this.widget.quizzes, this.widget.next, this.widget.user);
                     } else {
                       setState(() {
                         coleur[index] = Colors.red;
@@ -240,7 +244,7 @@ class _QcuState extends State<Qcu> {
                   },
                   child: Center(
                     child: Text(
-                      this.widget.quizz.choices[index],
+                      this.widget.quizzes[this.widget.quizz].choices[index],
                       style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Rubik',
@@ -261,4 +265,104 @@ class _QcuState extends State<Qcu> {
       }),
     );
   }
+}
+
+void _tripEditModalBottonSheet(context,List<Quizz> quizzes, int next, User user) {
+  showModalBottomSheet(
+      isDismissible: false,
+      enableDrag: true,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(50),
+        ),
+      ),
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+            height: 640,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color(0xffFAFFDA),
+              //borderRadius: BorderRadius.circular(50),
+            ),
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 300),
+                  width: 60,
+                  // padding: EdgeInsets.only(right: 600),
+
+                  decoration: BoxDecoration(
+                    color: Color(0xffFAFFDA),
+                  ),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color(0xffFAFFDA),
+                        shadowColor: Color(0xffFAFFDA),
+                        elevation: 0.01),
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: Container(
+                      color: Color(0xffFAFFDA),
+                      margin: EdgeInsets.only(right: 300),
+                      child: Icon(
+                        Icons.arrow_back_rounded,
+                        color: Color(0xffFFA450),
+                        size: 45,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                    height: 280,
+                    child: Image(
+                      image: AssetImage('images/notice.png'),
+                      fit: BoxFit.fill,
+                    )),
+                Container(
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      "BRAVO!",
+                      style: TextStyle(
+                          color: Color(0xffFFC700),
+                          fontSize: 56,
+                          fontFamily: 'Rubik',
+                          fontWeight: FontWeight.w900),
+                    )),
+                Container(
+                  margin: EdgeInsets.only(right: 40, left: 40, bottom: 10),
+                  child: Text(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna al.  sed do eiusmod tempor incididunt ut labore et dolore magna al.",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 15,
+                      )),
+                ),
+                Container(height: 10),
+                Container(
+                  child: RaisedButton(
+                    splashColor: Color.fromARGB(255, 253, 196, 143),
+                    textColor: Colors.white,
+                    color: Color(0xffFFA450),
+                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return Qcu(quizzes, next, next + 1, user);
+                      }));
+                    },
+                    child: Text(
+                      "Suivant",
+                      style: TextStyle(
+                          fontFamily: 'Rubik',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                )
+              ],
+            ));
+      });
 }
