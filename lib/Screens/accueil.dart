@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
@@ -7,7 +9,7 @@ import '../back/quizz.dart';
 import 'profil.dart';
 import 'qcu.dart';
 import 'espaceEP.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'mapfruits.dart';
 import 'package:projet/gestionSon.dart';
 
 class Accueil extends StatefulWidget {
@@ -24,7 +26,6 @@ class _AccueilState extends State<Accueil> {
 
   @override
   void initState() {
-    // getPref();
     super.initState();
     getQuizzes().then((quizzes) => {
           this.setState(() {
@@ -129,7 +130,6 @@ class _AccueilState extends State<Accueil> {
                       margin: EdgeInsets.only(right: 8),
                       child: MaterialButton(
                         onPressed: () {
-                          
                           gestionSfx();
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
@@ -189,7 +189,7 @@ class _AccueilState extends State<Accueil> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Heureux de te revoir !',
+                'Heureux de te revoir!',
                 style: TextStyle(
                     fontFamily: 'Rubik',
                     fontSize: 36,
@@ -207,12 +207,22 @@ class _AccueilState extends State<Accueil> {
                 width: 177,
                 child: ElevatedButton(
                   onPressed: () {
+                    //gestionSfx();
+                      
+                      
+                    var random = new Random();
+                    int i = 1 + random.nextInt(100);
+                    print(i);
+                    noticeSon(i);
                     
-                    gestionSfx();
-                    // Navigator.of(context)
-                    //     .push(MaterialPageRoute(builder: (context) {
-                    //   return Qcu(quizzes[1], user);
-                    // }));
+
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      //return JigsawPuzzlePage();
+                      //return PuzzleWidget;
+                      //return Qcu(quizzes[0], user);
+                      return mapfruits(quizzes);
+                    }));
                   },
                   child: Text("jouer"),
                   style: ElevatedButton.styleFrom(

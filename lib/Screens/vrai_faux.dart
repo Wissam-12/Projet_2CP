@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
+
+import '../gestionSon.dart';
 
 class Vrai_Faux extends StatefulWidget {
   Vrai_Faux({Key? key}) : super(key: key);
@@ -41,8 +42,7 @@ class _vraiFauxState extends State<Vrai_Faux> {
                                 size: 32,
                               ),
                               onPressed: () {
-                                final player = AudioCache(prefix : 'audio/');
-                                player.play('buttonsound.mp3');
+                                gestionSfx();
                               }),
                           backgroundColor: Color(0xffFFA450),
                         ),
@@ -85,13 +85,13 @@ class _vraiFauxState extends State<Vrai_Faux> {
                         child: Container(
                           child: IconButton(
                               icon: Icon(
-                                Icons.music_note,
+                                Icons.settings,
                                 color: Colors.white,
                                 size: 32,
                               ),
                               onPressed: () {
-                                final player = AudioCache(prefix : 'audio/');
-                                player.play('buttonsound.mp3');
+                                gestionSfx();
+                                showDialogFunc(context);
                               }),
                         ),
                         backgroundColor: Color(0xffFFA450),
@@ -100,8 +100,7 @@ class _vraiFauxState extends State<Vrai_Faux> {
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
                           onPressed: () {
-                            final player = AudioCache(prefix : 'audio/');
-                            player.play('buttonsound.mp3');
+                            gestionSfx();
                           },
                           height: 70,
                           shape: CircleBorder(),

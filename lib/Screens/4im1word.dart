@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
+
+import '../gestionSon.dart';
 
 class im1word extends StatefulWidget {
   im1word({Key? key}) : super(key: key);
@@ -41,8 +42,7 @@ class _im1wordState extends State<im1word> {
                                 size: 32,
                               ),
                               onPressed: () {
-                                final player = AudioCache(prefix : 'audio/');
-                                player.play('buttonsound.mp3');
+                                gestionSfx();
                               }),
                           backgroundColor: Color(0xffFFA450),
                         ),
@@ -85,13 +85,13 @@ class _im1wordState extends State<im1word> {
                         child: Container(
                           child: IconButton(
                               icon: Icon(
-                                Icons.music_note,
+                                Icons.settings,
                                 color: Colors.white,
                                 size: 32,
                               ),
                               onPressed: () {
-                                final player = AudioCache(prefix : 'audio/');
-                                player.play('buttonsound.mp3');
+                                gestionSfx();
+                                showDialogFunc(context);
                               }),
                         ),
                         backgroundColor: Color(0xffFFA450),
@@ -100,8 +100,7 @@ class _im1wordState extends State<im1word> {
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
                           onPressed: () {
-                            final player = AudioCache(prefix : 'audio/');
-                            player.play('buttonsound.mp3');
+                            gestionSfx();
                           },
                           height: 70,
                           shape: CircleBorder(),

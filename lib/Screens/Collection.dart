@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import '../gestionSon.dart';
+
 class Collection extends StatefulWidget {
   Collection({Key? key}) : super(key: key);
 
@@ -42,7 +44,9 @@ class _CollectionState extends State<Collection> {
                           color: Colors.white,
                           size: 32,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          gestionSfx();
+                        }),
                     backgroundColor: Color(0xffFFA450),
                   ),
                 ),
@@ -85,11 +89,14 @@ class _CollectionState extends State<Collection> {
                   child: Container(
                     child: IconButton(
                         icon: Icon(
-                          Icons.music_note,
+                          Icons.settings,
                           color: Colors.white,
                           size: 32,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          gestionSfx();
+                          showDialogFunc(context);
+                        }),
                   ),
                   backgroundColor: Color(0xffFFA450),
                 ),
@@ -97,6 +104,7 @@ class _CollectionState extends State<Collection> {
                   margin: EdgeInsets.only(right: 8),
                   child: MaterialButton(
                     onPressed: () {
+                      gestionSfx();
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
                         return Collection();
@@ -118,7 +126,6 @@ class _CollectionState extends State<Collection> {
               ],
             ),
           ]),
-
       body: Container(
         margin: EdgeInsets.only(top: 30),
         child: SingleChildScrollView(
@@ -132,7 +139,9 @@ class _CollectionState extends State<Collection> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 110,),
+                      SizedBox(
+                        height: 110,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -145,15 +154,15 @@ class _CollectionState extends State<Collection> {
                                 style: TextStyle(
                                     fontFamily: 'Rubik-ExtraBold',
                                     fontSize: 42,
-                                    color: Color(0xff3DB86E)
-                                ),
+                                    color: Color(0xff3DB86E)),
                               ),
                             ),
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 20,),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -175,7 +184,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -194,7 +205,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -215,8 +228,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -238,7 +252,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -257,7 +273,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -278,8 +296,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -301,7 +320,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -320,7 +341,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -341,8 +364,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -364,7 +388,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -383,7 +409,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -404,8 +432,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -427,7 +456,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -446,7 +477,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -467,8 +500,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -490,7 +524,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -509,7 +545,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -530,8 +568,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -553,7 +592,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -572,7 +613,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -593,8 +636,9 @@ class _CollectionState extends State<Collection> {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 17,),
+                      SizedBox(
+                        height: 17,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
@@ -616,7 +660,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -635,7 +681,9 @@ class _CollectionState extends State<Collection> {
                               borderRadius: BorderRadius.circular(25),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Container(
                             child: Center(
                               child: Container(
@@ -660,7 +708,6 @@ class _CollectionState extends State<Collection> {
                   ),
                 ),
               ),
-              
               Center(
                 child: Container(
                   child: Image.asset("images/vagues.png"),

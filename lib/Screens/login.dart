@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; 
-import 'home.dart';
+import 'package:provider/provider.dart';
+//import 'Screens/home.dart';
+import '../gestionSon.dart';
 import '../google_sign_in.dart';
 
 class Login extends StatefulWidget {
@@ -18,101 +19,108 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldkey,
-      body: Container(
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Column(
-              //mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SizedBox(
-                    height: 60,
-                ),
-                Container(
-                  height: 280,
-                  child: Center(
-                      child: Container(
-                    height: 280,
-                    width: 280,
-                    child: Image.asset("images/LOGO.png"),
-                  )),
-                ),
-                SizedBox(
-                    height: 20,
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10,),
-                  child: new TextFormField(
-                      keyboardType: TextInputType.text,
-                      style: TextStyle(
+        key: scaffoldkey,
+        body: Container(
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Column(
+                  //mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Container(
+                      height: 280,
+                      child: Center(
+                          child: Container(
+                        height: 280,
+                        width: 280,
+                        child: Image.asset("images/LOGO.png"),
+                      )),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 10,
+                      ),
+                      child: new TextFormField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
                           color: Color(0XFFFFA450),
                           fontFamily: 'DMsans',
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
-                      ),
-                      decoration: new InputDecoration(
+                        ),
+                        decoration: new InputDecoration(
                           labelText: "Entrez votre nom",
                           labelStyle: TextStyle(
-                              fontFamily: 'DMSans',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0XFFFFA450),
+                            fontFamily: 'DMSans',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0XFFFFA450),
                           ),
                           enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0XFFFFA450),
-                              ),
+                            borderSide: BorderSide(
+                              color: Color(0XFFFFA450),
+                            ),
                           ),
                           focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Color(0xFFFF6F50),
-                              ),
-                          ),
-                      ),
-                  ),
-                ),
-                SizedBox(
-                    height: 20,
-                ),
-                Center(
-                  child: Container(
-                    alignment: Alignment.topCenter,
-                    child: Center(
-                      child: SizedBox(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              const BoxShadow(
-                                color: Color(0xFFFF6F50),
-                              ),
-                              const BoxShadow(
-                                color: Color(0XFFFFA450),
-                                blurRadius: 10.0,
-                                offset: Offset(4, -4),
-                              ),
-                            ],
-                          ),
-                          child: TextButton(
-                            onPressed: () {
-                              final provider = Provider.of<GoogleSignInProvider>(context, listen: false);
-                              provider.googleLogin();
-                            },
-                            child: Text(
-                              "C'est parti",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                              ),
-                              ),
+                            borderSide: BorderSide(
+                              color: Color(0xFFFF6F50),
+                            ),
                           ),
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: Container(
+                        alignment: Alignment.topCenter,
+                        child: Center(
+                          child: SizedBox(
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 5, horizontal: 10),
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  const BoxShadow(
+                                    color: Color(0xFFFF6F50),
+                                  ),
+                                  const BoxShadow(
+                                    color: Color(0XFFFFA450),
+                                    blurRadius: 10.0,
+                                    offset: Offset(4, -4),
+                                  ),
+                                ],
+                              ),
+                              child: TextButton(
+                                onPressed: () {
+                                  gestionSfx();
+                                  final provider =
+                                      Provider.of<GoogleSignInProvider>(context,
+                                          listen: false);
+                                  provider.googleLogin();
+                                },
+                                child: Text(
+                                  "C'est parti",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 32,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),]
                   ),
-                ),
-              ]),
           Container(
               width: double.infinity,
               height: double.infinity,
@@ -129,9 +137,8 @@ class _LoginState extends State<Login> {
             height: 200,
             alignment: Alignment.bottomRight,
             child: Image.asset("images/pic.png"),
-          ),
-        ],
-      ),
-    ));
+          ),],
+        )),
+    );
   }
 }

@@ -17,7 +17,7 @@ class _RecetteCarteState extends State<RecetteCarte>{
         return GestureDetector(
             onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                    return DetailsRecette(this.widget.exRecettes);
+                   return DetailsRecette(this.widget.exRecettes);
                 }));
             },
             child: Container(

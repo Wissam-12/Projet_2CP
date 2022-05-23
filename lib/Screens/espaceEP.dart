@@ -1,7 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 import '../Model/listConseils.dart';
 import '../Model/listRecettes.dart';
 
+class Circ {
+  double points;
+  String s;
+  Circ(this.points, this.s);
+}
+
+// ON DOIT AVOIR UN OBJET USER QUI A SCORE COMME ATTRIBUT
+// JE SUPPOSE QUE SCORE EST UNE VARIABLE GLOBALE ET C LE SCORE DE L UTILISATEUR
+final int Score = 9000;
+final int maxPoints = 10000;
+double score_en100 = Score * 100 / maxPoints;
+dynamic getChartData() {
+  List<Circ> chartData = <Circ>[
+    Circ(0.1, "m"),
+    Circ(0.1, "m"),
+    Circ(score_en100, "j")
+  ];
+  return chartData;
+}
 class ConseilsEP extends StatefulWidget {
   ConseilsEP({Key? key}) : super(key: key);
 
@@ -10,11 +30,23 @@ class ConseilsEP extends StatefulWidget {
 }
 
 class _ConseilsEPState extends State<ConseilsEP> {
-  List<String> tags = ["All", "Salades", "Desserts", "Plats Chauds", "Sandwichs"];
-  List<Color> colTags = [Color(0xff3DB86E), Color(0xffD1F5CA), Color(0xffD1F5CA), Color(0xffD1F5CA), Color(0xffD1F5CA)];
+  List<String> tags = [
+    "All",
+    "Salades",
+    "Desserts",
+    "Plats Chauds",
+    "Sandwichs"
+  ];
+  List<Color> colTags = [
+    Color(0xff3DB86E),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA),
+    Color(0xffD1F5CA)
+  ];
   String selectedTag = "All";
   int selectedindex = 0;
-  List<Widget> pages (Widget lsTags){
+  List<Widget> pages(Widget lsTags) {
     return [
       Container(
           padding: EdgeInsets.only(top: 120),
@@ -75,11 +107,10 @@ class _ConseilsEPState extends State<ConseilsEP> {
           // LIST OF TYPE OF THE DISH :
           lsTags,
 
-
           // ELEMENT OF "COLUMN"
           // ROW OF COLUMN => THE DISHES
           Container(
-            height: 475, //checked
+            height: 469, //fix heights heere
             child: RecetteModel.afficher(selected()),
           ),
         ]),
@@ -131,7 +162,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         padding: EdgeInsets.only(top: 10, bottom: 15),
                         child: Text(
                           "Vous êtes sur une séquence de",
-                          style: (TextStyle(fontFamily: 'Poppins', fontSize: 8)),
+                          style:
+                              (TextStyle(fontFamily: 'Poppins', fontSize: 8)),
                         ),
                       ),
                       Text("5",
@@ -144,7 +176,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         padding: EdgeInsets.only(bottom: 10),
                         child: Text(
                           "Jours",
-                          style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
+                          style:
+                              (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
                         ),
                       ),
                       Text(
@@ -203,7 +236,8 @@ class _ConseilsEPState extends State<ConseilsEP> {
                   children: [
                     Container(
                         alignment: Alignment.topLeft,
-                        padding: EdgeInsets.only(top: 20, right: 60, bottom: 20),
+                        padding:
+                            EdgeInsets.only(top: 20, right: 60, bottom: 20),
                         child: Text(
                           "Points totaux",
                           style: TextStyle(
@@ -221,28 +255,188 @@ class _ConseilsEPState extends State<ConseilsEP> {
                         style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
                       ),
                     ),
+                    Text(
+                      "Meilleure séquence : 7J",
+                      style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
+                    ),
+                  ],
+                ),],
+              ),),
+              Container(
+                width: 10,
+              ),
+              // LE DEUXIEME BOX
+              Container(
+                width: 155,
+                height: 220,
+                decoration: BoxDecoration(
+                  color: Color(0xffEEF2C6),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      contentPadding:
+                          EdgeInsets.only(top: 10, left: 14, right: 9),
+                      title: Text(
+                        "Score acqui par jour",
+                        style: TextStyle(
+                            fontFamily: 'Rubik',
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      trailing: Icon(
+                        Icons.bar_chart,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Container(
+                      height: 120,
+                      width: 130,
+                      child: SfCartesianChart(
+                        primaryXAxis: CategoryAxis(
+                          isVisible: false,
+                          labelStyle: TextStyle(
+                              fontSize: 11, fontWeight: FontWeight.w500),
+                        ),
+                        primaryYAxis: NumericAxis(isVisible: false),
+                        plotAreaBorderWidth: 0,
+                        isTransposed: false,
+                        palette: <Color>[Color(0xffFF6F50)],
+                        series: <ChartSeries>[
+                          ColumnSeries<Jour, String>(
+                            dataSource: getColumnData(),
+                            xValueMapper: (Jour jour, _) => jour.jour,
+                            yValueMapper: (Jour jour, _) => jour.points,
+                          )
+                          // dataLabelSettings:
+                          //   DataLabelSettings(isVisible: true)),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        'D   L   M   M  J   V   S ',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ),
                   ],
                 ),
-                //le cercle
-                Text("       le cercle"),
-              ],
-            ),
+              ),
+            ],
           ),
-          Container(
-            alignment: Alignment.topCenter,
-            margin: EdgeInsets.only(top: 1),
-            width: 180,
-            height: 130,
-            child: Image(
-              image: AssetImage('images/stat.png'),
-              fit: BoxFit.fill,
-            ),
+        //3EME BOX
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 35),
+          width: double.infinity,
+          height: 125,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(40, 61, 184, 110),
+            borderRadius: BorderRadius.circular(20),
           ),
-        ],
-      ),
-    ];
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  Container(
+                      alignment: Alignment.topLeft,
+                      padding: EdgeInsets.only(top: 20, right: 60, bottom: 20),
+                      child: Text(
+                        "Points totaux",
+                        style: TextStyle(
+                            fontFamily: 'Rubik',
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600),
+                        textAlign: TextAlign.left,
+                      )),
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    width: 200,
+                    height: 40,
+                    child: Text(
+                      "Vous avez collecté jusqu'à présent ${score_en100}% du maximum de points, bravo !",
+                      style: (TextStyle(fontFamily: 'Poppins', fontSize: 10)),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                child: SfCircularChart(
+                    borderWidth: 0.05,
+                    margin: EdgeInsets.all(5),
+                    palette: <Color>[
+                      Color(0xff3DB86E)
+                    ],
+                    annotations: <CircularChartAnnotation>[
+                      CircularChartAnnotation(
+                        widget: Container(
+                          child: Text('${score_en100}% ',
+                              style: TextStyle(
+                                  color: Color(0xff8CB49C),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 11)),
+                        ),
+                      )
+                    ],
+                    series: <CircularSeries>[
+                      // Renders radial bar chart
+
+// <<<<<<< HEAD
+//                       RadialBarSeries<Circ, String>(
+//                           useSeriesColor: true,
+//                           trackOpacity: 0.3,
+//                           dataSource: getChartData(),
+//                           maximumValue: 100,
+//                           xValueMapper: (Circ data, _) => data.s,
+//                           yValueMapper: (Circ data, _) => data.points,
+//                           cornerStyle: CornerStyle.bothCurve)
+//                     ]),
+//               ),
+//             ],
+//           ),
+//           Container(
+//             alignment: Alignment.topCenter,
+//             margin: EdgeInsets.only(top: 1),
+//             width: 180,
+//             height: 130,
+//             child: Image(
+//               image: AssetImage('images/stat.png'),
+//               fit: BoxFit.fill,
+//             ),
+//           ),
+//         ],
+//       ),
+//     ];
+//   }
+// =======
+                      RadialBarSeries<Circ, String>(
+                          useSeriesColor: true,
+                          trackOpacity: 0.3,
+                          dataSource: getChartData(),
+                          maximumValue: 100,
+                          xValueMapper: (Circ data, _) => data.s,
+                          yValueMapper: (Circ data, _) => data.points,
+                          cornerStyle: CornerStyle.bothCurve)
+                    ]),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          alignment: Alignment.topCenter,
+          margin: EdgeInsets.only(top: 1),
+          width: 180,
+          height: 166,
+          child: Image(
+            image: AssetImage('images/image_statistiques.png'),
+            fit: BoxFit.fill,
+          ),
+        ),
+        ];
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -269,10 +463,12 @@ class _ConseilsEPState extends State<ConseilsEP> {
           ]),
     );
   }
-  selected(){
+
+  selected() {
     return selectedTag;
   }
-  listTags(List<String> tags, List<Color> coleurs){
+
+  listTags(List<String> tags, List<Color> coleurs) {
     return Container(
       width: double.infinity,
       //padding: EdgeInsets.only(bottom: 30), //CHECKED
@@ -284,41 +480,40 @@ class _ConseilsEPState extends State<ConseilsEP> {
             width: 42,
           ),
           Row(
-            children: List<Widget>.generate(tags.length, (int index){
+            children: List<Widget>.generate(tags.length, (int index) {
               return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedTag = tags[index];
-                    for(var i = 0; i < tags.length; i++){
-                      if (i == index){
-                        coleurs[index] = Color(0xff3DB86E);
-                      }else{
-                        coleurs[i] = Color(0xffD1F5CA);
+                  onTap: () {
+                    setState(() {
+                      selectedTag = tags[index];
+                      for (var i = 0; i < tags.length; i++) {
+                        if (i == index) {
+                          coleurs[index] = Color(0xff3DB86E);
+                        } else {
+                          coleurs[i] = Color(0xffD1F5CA);
+                        }
                       }
-                    }
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    color: coleurs[index],
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  width: (tags[index].length)*12 + 10,
-                  // height: 56,
-                  child: Center(
-                    child: Text(
-                      tags[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontFamily: 'Rubik',
-                          fontWeight: FontWeight.w500),
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      color: coleurs[index],
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                  ),
-                )
-              );
+                    width: (tags[index].length) * 12 + 10,
+                    // height: 56,
+                    child: Center(
+                      child: Text(
+                        tags[index],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ));
             }),
           ),
           Container(
@@ -328,4 +523,23 @@ class _ConseilsEPState extends State<ConseilsEP> {
       ),
     );
   }
+}
+
+class Jour {
+  String jour;
+  double points;
+  Jour(this.jour, this.points);
+}
+
+dynamic getColumnData() {
+  List<Jour> columnData = <Jour>[
+    Jour("D", 200),
+    Jour("L", 210),
+    Jour("Ma", 300),
+    Jour("Me", 102),
+    Jour("J", 100),
+    Jour("V", 130),
+    Jour("S", 150)
+  ];
+  return columnData;
 }

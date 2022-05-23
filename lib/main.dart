@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:projet/gestionSon.dart';
 import 'package:provider/provider.dart'; 
@@ -8,17 +7,13 @@ import 'Screens/qcu.dart';
 import 'Screens/login.dart';
 import 'google_sign_in.dart';
 import 'Screens/accueil.dart';
+import 'gestionSon.dart';
 
 void main() async {
-  
-  player.load("audio/buttonSound.mp3");
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
   gestionBgm();
-
-  // final player = AudioCache(prefix : 'audio/');
-  // player.play('11.mp3');
 }
 
 class MyApp extends StatefulWidget {
@@ -35,6 +30,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
     getPref();
     super.initState();
     WidgetsBinding.instance?.addObserver(this);
+    
   }
 
   @override
@@ -48,9 +44,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
     super.didChangeAppLifecycleState(state);
 
-    if (state== AppLifecycleState.resumed) {playFile();}
-    if (state == AppLifecycleState.inactive) {stopFile();}
-    if (state == AppLifecycleState.paused) {stopFile();}
+    if (state == AppLifecycleState.inactive) {pauseFile(); pauseNotice();}
+    if (state == AppLifecycleState.paused) {pauseFile(); pauseNotice();}
+    if (state== AppLifecycleState.resumed) {resumeFile(); resumeNotice();}
 
   }
   

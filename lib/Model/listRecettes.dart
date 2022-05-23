@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Screens/recetteCarte.dart';
-import 'dart:io';
+
 
 class RecetteModel{
     String? titre, description, duree;
