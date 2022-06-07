@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import '../back/database.dart';
 import '../back/quizz.dart';
+import 'dart:io';
+import '../gestionSon.dart';
 import 'notice.dart';
 //import 'dart:io';
 
@@ -58,6 +60,7 @@ class _QcuState extends State<Qcu> {
                                         size: 32,
                                       ),
                                       onPressed: () {
+                                        gestionSfx();
                                         Navigator.pop(context);
                                       },
                                     ),
@@ -103,18 +106,23 @@ class _QcuState extends State<Qcu> {
                                 child: Container(
                                   child: IconButton(
                                       icon: Icon(
-                                        Icons.music_note,
+                                        Icons.settings,
                                         color: Colors.white,
                                         size: 32,
                                       ),
-                                      onPressed: () {}),
+                                      onPressed: () {
+                                        gestionSfx();
+                                        showDialogFunc(context);
+                                      }),
                                 ),
                                 backgroundColor: Color(0xffFFA450),
                               ),
                               Container(
                                 margin: EdgeInsets.only(right: 8),
                                 child: MaterialButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    gestionSfx();
+                                  },
                                   height: 70,
                                   shape: CircleBorder(),
                                   child: CircleAvatar(

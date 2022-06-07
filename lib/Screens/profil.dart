@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart';
+import '../gestionSon.dart';
 import '../google_sign_in.dart';
 import 'home.dart';
 
@@ -23,7 +24,7 @@ class _ProfilState extends State<Profil> {
       final uid = user.uid;
 
     return Scaffold(
-
+      
         ///**************************************************************** */
         body: Container(
             color: Color.fromRGBO(235, 255, 219, 1),
@@ -50,7 +51,8 @@ class _ProfilState extends State<Profil> {
                                       size: 32,
                                     ),
                                     onPressed: () {
-                                        Navigator.pop(context);
+                                      gestionSfx();
+                                      Navigator.pop(context);
                                     }),
                                 backgroundColor: Color(0xffFFA450),
                               ),
@@ -93,18 +95,23 @@ class _ProfilState extends State<Profil> {
                               child: Container(
                                 child: IconButton(
                                     icon: Icon(
-                                      Icons.music_note,
+                                      Icons.settings,
                                       color: Colors.white,
                                       size: 32,
                                     ),
-                                    onPressed: () {}),
+                                    onPressed: () {
+                                      gestionSfx();
+                                      showDialogFunc(context);
+                                    }),
                               ),
                               backgroundColor: Color(0xffFFA450),
                             ),
                             Container(
                               margin: EdgeInsets.only(right: 8),
                               child: MaterialButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  gestionSfx();
+                                },
                                 height: 70,
                                 shape: CircleBorder(),
                                 child: CircleAvatar(
@@ -142,7 +149,8 @@ class _ProfilState extends State<Profil> {
                       ),
                 child: Center(
                   child:Text(
-                      ((user.displayName!).split(' '))[0],
+                    'hi',
+                      //((user.displayName!).split(' '))[0],
                     textAlign:TextAlign.center ,
                     style:TextStyle(
                       color: Colors.white,
@@ -204,6 +212,7 @@ class _ProfilState extends State<Profil> {
                             ),
                           ),
                           onPressed: (){
+                            gestionSfx();
                             pickit(context, user);
                             // uploadPic(context);
                           },
@@ -263,6 +272,7 @@ class _ProfilState extends State<Profil> {
                height: 64, width: 292,
                child: ElevatedButton(
                  onPressed: () {
+                   gestionSfx();
                     //  uploadPic(context);
                  },
                  child:Row(children: [
@@ -284,7 +294,9 @@ class _ProfilState extends State<Profil> {
                     height: 64,
                     width: 292,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       child: Row(
                         children: [
                           SizedBox(width: (107 - 86)),
@@ -317,6 +329,7 @@ class _ProfilState extends State<Profil> {
                     width: 292,
                     child: ElevatedButton(
                       onPressed: () {
+                        gestionSfx();
                         final provider = Provider.of<GoogleSignInProvider>(
                             context,
                             listen: false);

@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:projet/Screens/mapGrasse.dart';
 
+import '../gestionSon.dart';
+
 class map extends StatefulWidget {
   const map({Key? key}) : super(key: key);
 
@@ -47,7 +49,9 @@ class _mapState extends State<map> {
                               color: Colors.white,
                               size: 36,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
@@ -91,18 +95,23 @@ class _mapState extends State<map> {
                     child: Container(
                       child: IconButton(
                           icon: Icon(
-                            Icons.music_note,
+                            Icons.settings,
                             color: Colors.white,
                             size: 32,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            gestionSfx();
+                            showDialogFunc(context);
+                          }),
                     ),
                     backgroundColor: Color(0xffFFA450),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 8),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -143,6 +152,7 @@ class _mapState extends State<map> {
                             size: 38,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return mapGrasse();
@@ -164,6 +174,7 @@ class _mapState extends State<map> {
                             size: 32,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             // Navigator.of(context)
                             //     .push(MaterialPageRoute(builder: (context) {
                             //   return Collection();
@@ -186,7 +197,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -203,7 +216,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -221,7 +236,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -237,7 +254,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -253,7 +272,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -269,7 +290,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -286,7 +309,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -304,7 +329,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -321,7 +348,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -337,7 +366,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -354,7 +385,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -371,7 +404,9 @@ class _mapState extends State<map> {
                               color: Color.fromARGB(255, 53, 52, 52),
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                         backgroundColor: Colors.transparent,
                       ),
                     ),
@@ -387,7 +422,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -404,7 +441,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -421,7 +460,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -438,7 +479,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -455,7 +498,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -472,7 +517,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -489,7 +536,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -506,7 +555,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -523,7 +574,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -539,7 +592,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -554,7 +609,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -570,7 +627,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -585,7 +644,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -600,7 +661,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -615,7 +678,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -630,7 +695,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -645,7 +712,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -660,7 +729,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -675,7 +746,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -690,7 +763,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -705,7 +780,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -720,7 +797,9 @@ class _mapState extends State<map> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -736,7 +815,9 @@ class _mapState extends State<map> {
                             color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -750,7 +831,9 @@ class _mapState extends State<map> {
               margin: EdgeInsets.only(left: 315),
               child: FloatingActionButton(
                   backgroundColor: Color(0xffFFA450),
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    gestionSfx();
+                  }),
                   child: Container(
                     height: 60,
                     width: 60,

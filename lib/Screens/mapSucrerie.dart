@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../gestionSon.dart';
+
 class mapSucrerie extends StatefulWidget {
   mapSucrerie({Key? key}) : super(key: key);
 
@@ -46,7 +48,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                               color: Colors.white,
                               size: 36,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
@@ -90,18 +94,23 @@ class _mapSucrerieState extends State<mapSucrerie> {
                     child: Container(
                       child: IconButton(
                           icon: Icon(
-                            Icons.music_note,
+                            Icons.settings,
                             color: Colors.white,
                             size: 32,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            gestionSfx();
+                            showDialogFunc(context);
+                          }),
                     ),
                     backgroundColor: Color(0xffFFA450),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 8),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -138,7 +147,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           //color: Colors.transparent,
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -154,7 +165,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -171,7 +184,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -188,7 +203,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -204,7 +221,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -220,7 +239,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -236,7 +257,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -253,7 +276,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -271,7 +296,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -288,7 +315,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -305,7 +334,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -322,7 +353,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 53, 52, 52),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -339,7 +372,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -354,7 +389,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -370,7 +407,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -385,7 +424,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -400,7 +441,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -415,7 +458,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -430,7 +475,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -445,7 +492,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -460,7 +509,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -475,7 +526,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -490,7 +543,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -505,7 +560,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -520,7 +577,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -535,7 +594,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Color.fromARGB(255, 46, 46, 46),
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -550,7 +611,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           color: Colors.transparent,
                           size: 32,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          gestionSfx();
+                        },
                       ),
                       backgroundColor: Colors.transparent,
                     ),
@@ -566,6 +629,7 @@ class _mapSucrerieState extends State<mapSucrerie> {
                           size: 38,
                         ),
                         onPressed: () {
+                          gestionSfx();
                           // Navigator.of(context)
                           //     .push(MaterialPageRoute(builder: (context) {
                           //   return mapfruits();
@@ -584,7 +648,9 @@ class _mapSucrerieState extends State<mapSucrerie> {
             margin: EdgeInsets.only(left: 315),
             child: FloatingActionButton(
                 backgroundColor: Color(0xffFFA450),
-                onPressed: (() {}),
+                onPressed: (() {
+                  gestionSfx();
+                }),
                 child: Container(
                   height: 60,
                   width: 60,

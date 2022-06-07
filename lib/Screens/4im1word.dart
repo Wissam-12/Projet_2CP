@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../gestionSon.dart';
+
 class im1word extends StatefulWidget {
   im1word({Key? key}) : super(key: key);
 
@@ -39,7 +41,9 @@ class _im1wordState extends State<im1word> {
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                              }),
                           backgroundColor: Color(0xffFFA450),
                         ),
                       ),
@@ -81,18 +85,23 @@ class _im1wordState extends State<im1word> {
                         child: Container(
                           child: IconButton(
                               icon: Icon(
-                                Icons.music_note,
+                                Icons.settings,
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              onPressed: () {}),
+                              onPressed: () {
+                                gestionSfx();
+                                showDialogFunc(context);
+                              }),
                         ),
                         backgroundColor: Color(0xffFFA450),
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 8),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                           height: 70,
                           shape: CircleBorder(),
                           child: CircleAvatar(

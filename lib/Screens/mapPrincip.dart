@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../gestionSon.dart';
+
 class MapPrincp extends StatefulWidget {
   MapPrincp({Key? key}) : super(key: key);
 
@@ -25,7 +27,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 222, top: 1184),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -44,7 +48,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 302, top: 966),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -63,7 +69,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 94, top: 929),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -82,7 +90,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 226, top: 834),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -101,7 +111,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 162, top: 684),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -120,7 +132,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 138, top: 558),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -139,7 +153,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 306, top: 482),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -158,7 +174,9 @@ class _MapPrincpState extends State<MapPrincp> {
                   Container(
                     margin: EdgeInsets.only(left: 188, top: 208),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -196,7 +214,9 @@ class _MapPrincpState extends State<MapPrincp> {
                           color: Colors.white,
                           size: 40,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          gestionSfx();
+                        }),
                   ),
                   backgroundColor: Color(0xffFFA450),
                 ),

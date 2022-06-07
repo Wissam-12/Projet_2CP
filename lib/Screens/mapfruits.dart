@@ -5,6 +5,7 @@ import 'package:projet/Screens/map.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../back/database.dart';
 import '../back/quizz.dart';
+import '../gestionSon.dart';
 import 'qcu.dart';
 import 'mapPrincip.dart';
 
@@ -56,6 +57,7 @@ class _mapfruitsState extends State<mapfruits> {
                               size: 36,
                             ),
                             onPressed: () {
+                              gestionSfx();
                               Navigator.pop(context);
                             }),
                       ),
@@ -101,18 +103,23 @@ class _mapfruitsState extends State<mapfruits> {
                     child: Container(
                       child: IconButton(
                           icon: Icon(
-                            Icons.music_note,
+                            Icons.settings,
                             color: Colors.white,
                             size: 32,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            gestionSfx();
+                            showDialogFunc(context);
+                          }),
                     ),
                     backgroundColor: Color(0xffFFA450),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 8),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -152,6 +159,7 @@ class _mapfruitsState extends State<mapfruits> {
                             size: 38,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return map();
@@ -173,7 +181,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -190,7 +200,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -208,7 +220,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -224,7 +238,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -240,7 +256,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -256,7 +274,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -275,7 +295,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -291,7 +313,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -307,7 +331,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -323,7 +349,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -340,7 +368,9 @@ class _mapfruitsState extends State<mapfruits> {
                               color: Color.fromARGB(255, 53, 52, 52),
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                         backgroundColor: Colors.transparent,
                       ),
                     ),
@@ -356,7 +386,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -373,7 +405,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -390,7 +424,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -407,7 +443,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -423,7 +461,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -439,7 +479,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -454,7 +496,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -470,7 +514,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -486,7 +532,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -503,7 +551,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -520,7 +570,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -537,7 +589,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -553,7 +607,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -568,7 +624,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -584,7 +642,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -600,7 +660,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -616,7 +678,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -632,7 +696,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -647,7 +713,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -663,7 +731,9 @@ class _mapfruitsState extends State<mapfruits> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -679,7 +749,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -695,7 +767,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -711,7 +785,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -727,7 +803,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -743,7 +821,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -759,7 +839,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -775,7 +857,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -791,7 +875,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -807,7 +893,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -823,7 +911,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -839,7 +929,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -855,7 +947,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -871,7 +965,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -887,7 +983,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -903,7 +1001,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -919,7 +1019,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -935,7 +1037,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -951,7 +1055,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -967,7 +1073,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -983,7 +1091,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -999,7 +1109,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1015,7 +1127,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1031,7 +1145,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1047,7 +1163,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1063,7 +1181,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1079,7 +1199,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1095,7 +1217,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1111,7 +1235,9 @@ class _mapfruitsState extends State<mapfruits> {
                             //color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -1128,6 +1254,7 @@ class _mapfruitsState extends State<mapfruits> {
                             size: 32,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return Qcu(this.widget.quizzes, 1, 0, user);
@@ -1148,6 +1275,7 @@ class _mapfruitsState extends State<mapfruits> {
                             size: 32,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return Qcu(this.widget.quizzes, 0, 1,  user);
@@ -1167,6 +1295,7 @@ class _mapfruitsState extends State<mapfruits> {
               child: FloatingActionButton(
                   backgroundColor: Color(0xffFFA450),
                   onPressed: (() {
+                    gestionSfx();
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
                       return MapPrincp();

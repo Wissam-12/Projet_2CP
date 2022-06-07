@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:projet/Screens/mapfruits.dart';
 
+import '../gestionSon.dart';
+
 class mapFecul extends StatefulWidget {
   mapFecul({Key? key}) : super(key: key);
 
@@ -47,7 +49,9 @@ class _mapFeculState extends State<mapFecul> {
                               color: Colors.white,
                               size: 36,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                       ),
                       backgroundColor: Color(0xffFFA450),
                     ),
@@ -91,18 +95,23 @@ class _mapFeculState extends State<mapFecul> {
                     child: Container(
                       child: IconButton(
                           icon: Icon(
-                            Icons.music_note,
+                            Icons.settings,
                             color: Colors.white,
                             size: 32,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            gestionSfx();
+                            showDialogFunc(context);
+                          }),
                     ),
                     backgroundColor: Color(0xffFFA450),
                   ),
                   Container(
                     margin: EdgeInsets.only(right: 8),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        gestionSfx();
+                      },
                       height: 70,
                       shape: CircleBorder(),
                       child: CircleAvatar(
@@ -143,10 +152,11 @@ class _mapFeculState extends State<mapFecul> {
                             size: 38,
                           ),
                           onPressed: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return mapfruits();
-                            }));
+                            gestionSfx();
+                            // Navigator.of(context)
+                            //     .push(MaterialPageRoute(builder: (context) {
+                            //   return mapfruits();
+                            //}));
                           },
                         ),
                         backgroundColor: Colors.transparent,
@@ -164,6 +174,7 @@ class _mapFeculState extends State<mapFecul> {
                             size: 32,
                           ),
                           onPressed: () {
+                            gestionSfx();
                             // Navigator.of(context)
                             //     .push(MaterialPageRoute(builder: (context) {
                             //   return Collection();
@@ -186,7 +197,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -203,7 +216,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -221,7 +236,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -237,7 +254,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -253,7 +272,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -269,7 +290,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -286,7 +309,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -304,7 +329,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -321,7 +348,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -337,7 +366,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -354,7 +385,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -371,7 +404,9 @@ class _mapFeculState extends State<mapFecul> {
                               color: Color.fromARGB(255, 53, 52, 52),
                               size: 32,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              gestionSfx();
+                            }),
                         backgroundColor: Colors.transparent,
                       ),
                     ),
@@ -387,7 +422,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -404,7 +441,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -421,7 +460,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -438,7 +479,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -454,7 +497,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -473,7 +518,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -491,7 +538,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -508,7 +557,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -525,7 +576,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -541,7 +594,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -556,7 +611,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -572,7 +629,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -587,7 +646,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -602,7 +663,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -617,7 +680,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -632,7 +697,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -647,7 +714,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -662,7 +731,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -677,7 +748,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -692,7 +765,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -707,7 +782,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -722,7 +799,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Color.fromARGB(255, 53, 52, 52),
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -738,7 +817,9 @@ class _mapFeculState extends State<mapFecul> {
                             color: Colors.transparent,
                             size: 32,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            gestionSfx();
+                          },
                         ),
                         backgroundColor: Colors.transparent,
                       ),
@@ -752,7 +833,9 @@ class _mapFeculState extends State<mapFecul> {
               margin: EdgeInsets.only(left: 315),
               child: FloatingActionButton(
                   backgroundColor: Color(0xffFFA450),
-                  onPressed: (() {}),
+                  onPressed: (() {
+                    gestionSfx();
+                  }),
                   child: Container(
                     height: 60,
                     width: 60,

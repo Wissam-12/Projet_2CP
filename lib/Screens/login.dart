@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 //import 'Screens/home.dart';
+import '../gestionSon.dart';
 import '../google_sign_in.dart';
 
 class Login extends StatefulWidget {
@@ -100,6 +101,7 @@ class _LoginState extends State<Login> {
                               ),
                               child: TextButton(
                                 onPressed: () {
+                                  gestionSfx();
                                   final provider =
                                       Provider.of<GoogleSignInProvider>(context,
                                           listen: false);

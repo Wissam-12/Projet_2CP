@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/gestionSon.dart';
 
 class Notice extends StatefulWidget {
   Notice({Key? key}) : super(key: key);
@@ -25,6 +26,7 @@ class _NoticeState extends State<Notice> {
 }
 
 void _tripEditModalBottonSheet(context) {
+  encouragement();
   showModalBottomSheet(
       isDismissible: false,
       enableDrag: true,
@@ -104,7 +106,9 @@ void _tripEditModalBottonSheet(context) {
                     padding: EdgeInsets.symmetric(horizontal: 35, vertical: 15),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
-                    onPressed: () {},
+                    onPressed: () {
+                      stopNotice();
+                    },
                     child: Text(
                       "Suivant",
                       style: TextStyle(
@@ -117,5 +121,10 @@ void _tripEditModalBottonSheet(context) {
               ],
             ));
       });
+      
+      
+      
+      int i = 0 ; //ici on met le numéro du niveau
+      noticeSon(i);
 }
 

@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:projet/gestionSon.dart';
 
 class Collection extends StatefulWidget {
   Collection({Key? key}) : super(key: key);
@@ -42,7 +43,9 @@ class _CollectionState extends State<Collection> {
                           color: Colors.white,
                           size: 32,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          gestionSfx();
+                        }),
                     backgroundColor: Color(0xffFFA450),
                   ),
                 ),
@@ -85,11 +88,14 @@ class _CollectionState extends State<Collection> {
                   child: Container(
                     child: IconButton(
                         icon: Icon(
-                          Icons.music_note,
+                          Icons.settings,
                           color: Colors.white,
                           size: 32,
                         ),
-                        onPressed: () {}),
+                        onPressed: () {
+                          gestionSfx();
+                          showDialogFunc(context);
+                        }),
                   ),
                   backgroundColor: Color(0xffFFA450),
                 ),
@@ -97,6 +103,7 @@ class _CollectionState extends State<Collection> {
                   margin: EdgeInsets.only(right: 8),
                   child: MaterialButton(
                     onPressed: () {
+                      gestionSfx();
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {
                         return Collection();
